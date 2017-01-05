@@ -43,7 +43,7 @@
       <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="RelevantCodes.ExtentReports">
-      <HintPath>..\..\extentreports-net-v2.41.0\extentreports-net-v2.41.0\RelevantCodes.ExtentReports.dll</HintPath>
+      <HintPath>..\packages\ExtentReports.2.41.0\lib\RelevantCodes.ExtentReports.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
