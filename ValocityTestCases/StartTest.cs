@@ -53,7 +53,7 @@ namespace ValocityTestCases
                 throw;
             }
         }
-        [Test, Order(3)]
+        [Test, Order(2)]
         public void AddProductWithSPG()
         {
             //IWebDriver driver =DriverAccess.Shared();
@@ -96,7 +96,7 @@ namespace ValocityTestCases
                 throw;
             }
         }
-        [Test, Order(4)]
+        [Test, Order(3)]
         public void RestrictedKeyWordsSubmitAndReviewAndDeleteChanges()
         {
             //IWebDriver driver =DriverAccess.Shared();
@@ -151,7 +151,7 @@ namespace ValocityTestCases
                 throw;
             }
         }
-        //  [Test, Order(5)]
+        [Test, Order(4)]
         public void RestrictedKeyWordsSubmitAndReviewAndMakeActive()
         {
             //IWebDriver driver =DriverAccess.Shared();
@@ -206,7 +206,7 @@ namespace ValocityTestCases
                 throw;
             }
         }
-        [Test, Order(6)]
+        [Test, Order(5)]
         public void ProductWithMutiplePriceGrids()
         {
             try
@@ -248,8 +248,7 @@ namespace ValocityTestCases
             }
 
         }
-
-        [Test, Order(8)]
+        [Test, Order(6)]
         public void DeleteImageForProduct()
         {
             try
@@ -284,34 +283,7 @@ namespace ValocityTestCases
                 throw;
             }
         }
-        [Test, Order(9)]
-        public void DeleteActiveProduct()
-        {
-            try
-            {
-                test = extent.StartTest("DeleteActiveProduct");
-                IWebDriver driver = DriverAccess.Shared();
-                UserUtility.LoginToValocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
-                State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
-                //Make Sure At least one record is available for this name
-                ProductSearchUtility.SearchProductByName("\"" + Info.Product_Name_ActiveProduct + "\"");
-                ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(true), "Delete");
-                Wait.WaitUntilElementDisply(By.LinkText("Yes, Delete this Product"));
-                driver.FindElement(By.LinkText("Yes, Delete this Product")).Click();
-                Wait.WaitUntilLoadingInVisible();
-                Logger.Log("Delete Active product- Pass", LogStatus.Pass, test);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.Log("Delete Active product- Fail", ex);
-
-                throw;
-            }
-            // TestCasesCommon.LogoutUser();
-        }
-        [Test, Order(10)]
+        [Test, Order(7)]
         public void InActiveProduct()
         {
             try
@@ -336,7 +308,7 @@ namespace ValocityTestCases
             //  TestCasesCommon.LogoutUser();
 
         }
-        [Test, Order(11)]
+        [Test, Order(8)]
         public void Update_Edit_AlreadyActiveProduct()
         {
             try
@@ -384,7 +356,7 @@ namespace ValocityTestCases
             }
 
         }
-        [Test, Order(12)]
+        [Test, Order(9)]
         public void CopyProductAndActiveIt()
         {
             try
@@ -424,36 +396,7 @@ namespace ValocityTestCases
                 throw;
             }
         }
-
-        [Test, Order(13)]
-        public void DeleteInActiveProduct()
-        {
-            try
-            {
-                test = extent.StartTest("DeleteInActiveProduct");
-                IWebDriver driver = DriverAccess.Shared();
-                UserUtility.LoginToValocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
-                State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
-                ProductSearchUtility.SearchProductByName("\"" + Info.Product_Name_ActiveProduct + "\"");
-                ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(false), "Delete");
-                Wait.InSeconds(1);
-                Wait.WaitUntilElementDisply(By.LinkText("Yes, Delete this Product"));
-                driver.FindElement(By.LinkText("Yes, Delete this Product")).Click();
-                Wait.WaitUntilLoadingInVisible();
-                Wait.InSeconds(2);
-                Logger.Log("Delete In Active Product - Pass", LogStatus.Pass, test);
-                //  TestCasesCommon.LogoutUser();
-            }
-            catch (Exception ex)
-            {
-                Logger.Log("Delete In Active Product - Fail", ex);
-                throw;
-            }
-
-        }
-
-        [Test, Order(14)]
+        [Test, Order(10)]
         public void BulkOperationsOnProduct()
         {
             try
@@ -528,7 +471,7 @@ namespace ValocityTestCases
                 throw;
             }
         }
-        [Test, Order(15)]
+        [Test, Order(11)]
         public void SearchUsingKeyWords()
         {
             try
@@ -552,7 +495,7 @@ namespace ValocityTestCases
                 throw;
             }
         }
-        [Test, Order(16)]
+        [Test, Order(12)]
         public void SearchUsingDefaultFiltersSearch()
         {
             try
@@ -580,7 +523,7 @@ namespace ValocityTestCases
             }
 
         }
-        [Test, Order(17)]
+        [Test, Order(13)]
         public void SearchUsingMoreFiltersSearch()
         {
             try
@@ -609,7 +552,7 @@ namespace ValocityTestCases
                 throw;
             }
         }
-        [Test, Order(18)]
+        [Test, Order(14)]
         public void productResultSortBy()
         {
             try
@@ -634,7 +577,7 @@ namespace ValocityTestCases
             }
 
         }
-        [Test, Order(19)]
+        [Test, Order(15)]
         public void NavigateThroughSearchResult()
         {
             try
@@ -656,6 +599,60 @@ namespace ValocityTestCases
                 Logger.Log("Navigate through search result - fail", ex);
                 throw;
             }
+        }
+        [Test, Order(16)]
+        public void DeleteActiveProduct()
+        {
+            try
+            {
+                test = extent.StartTest("DeleteActiveProduct");
+                IWebDriver driver = DriverAccess.Shared();
+                UserUtility.LoginToValocity(Credentials.VelocityEIT_User);
+                State.GotoSupplierHome();
+                State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
+                //Make Sure At least one record is available for this name
+                ProductSearchUtility.SearchProductByName("\"" + Info.Product_Name_ActiveProduct + "\"");
+                ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(true), "Delete");
+                Wait.WaitUntilElementDisply(By.LinkText("Yes, Delete this Product"));
+                driver.FindElement(By.LinkText("Yes, Delete this Product")).Click();
+                Wait.WaitUntilLoadingInVisible();
+                Logger.Log("Delete Active product- Pass", LogStatus.Pass, test);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.Log("Delete Active product- Fail", ex);
+
+                throw;
+            }
+            // TestCasesCommon.LogoutUser();
+        }
+        [Test, Order(17)]
+        public void DeleteInActiveProduct()
+        {
+            try
+            {
+                test = extent.StartTest("DeleteInActiveProduct");
+                IWebDriver driver = DriverAccess.Shared();
+                UserUtility.LoginToValocity(Credentials.VelocityEIT_User);
+                State.GotoSupplierHome();
+                State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
+                ProductSearchUtility.SearchProductByName("\"" + Info.Product_Name_ActiveProduct + "\"");
+                ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(false), "Delete");
+                Wait.InSeconds(1);
+                Wait.WaitUntilElementDisply(By.LinkText("Yes, Delete this Product"));
+                driver.FindElement(By.LinkText("Yes, Delete this Product")).Click();
+                Wait.WaitUntilLoadingInVisible();
+                Wait.InSeconds(2);
+                Logger.Log("Delete In Active Product - Pass", LogStatus.Pass, test);
+                //  TestCasesCommon.LogoutUser();
+            }
+            catch (Exception ex)
+            {
+                Logger.Log("Delete In Active Product - Fail", ex);
+                throw;
+            }
+
         }
         [Test, Order(20)]
         public void ReviewSuppliersInfo()
