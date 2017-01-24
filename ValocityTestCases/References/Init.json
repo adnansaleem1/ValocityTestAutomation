@@ -1,5 +1,5 @@
 ﻿{
-    run: "staging",
+    run: "uat",
     staging: {
         URL_VelocityBase: "http://stage-espupdates.asicentral.com",
         ApiBasePath: "https://stage-productservice.asicentral.com",
@@ -61,20 +61,20 @@
         ],
         APIUser: [
             {
-                UserName: "eeeeee",
-                Password: "Macro1234",
+                UserName: "asaleem",
+                Password: "adnansaleem2",
                 ASINumber: "30235",
                 version: "JavaV2"
             },
             {
-                UserName: "eeeeee",
-                Password: "Macro1234",
+                 UserName: "asaleem",
+                Password: "adnansaleem2",
                 ASINumber: "30235",
                 version: "JavaV3"
             },
             {
-                UserName: "eeeeee",
-                Password: "Macro1234",
+                UserName: "asaleem",
+                Password: "adnansaleem2",
                 ASINumber: "30235",
                 version: "NetV3"
             }

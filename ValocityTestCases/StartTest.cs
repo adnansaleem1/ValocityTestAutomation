@@ -638,6 +638,7 @@ namespace ValocityTestCases
                 State.GotoSupplierHome();
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SearchProductByName("\"" + Info.Product_Name_ActiveProduct + "\"");
+                this.InActiveProduct();
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(false), "Delete");
                 Wait.InSeconds(1);
                 Wait.WaitUntilElementDisply(By.LinkText("Yes, Delete this Product"));
@@ -1288,10 +1289,11 @@ namespace ValocityTestCases
             try
             {
                 test = extent.StartTest("Esp_CheckWebSitesLogo");
-
+              //  Wait.InSeconds(5);
+                //UserUtility.LogoutVelocity();
                 UserUtility.LoginToValocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHomeByID(Credentials.VelocityEIT_User.ASINumber);
-                Wait.WaitUntilElementDisply(By.Id("supplierSearchTextBox"));
+                State.GotoSupplierHomeByID("101574");
+                Wait.WaitUntilElementDisply(By.LinkText("Manage Products"));
                 SeleniumExtension.ElementInDisplayTest(By.ClassName("espwebsitesLogo"));
                 Logger.Log("Esp_CheckWebSitesLogo - Pass");
             }

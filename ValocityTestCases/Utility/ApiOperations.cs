@@ -15,17 +15,10 @@ namespace ValocityTestCases.Utility
     {
         public static ProductObject GetProductByID(string id, APIUser user)
         {
-            try
-            {
+
                 var content = GetProductJsonByID(id, user);
                 ProductObject ProductResponse = JsonConvert.DeserializeObject<ProductObject>(content);
                 return ProductResponse;
-            }
-            catch (Exception)
-            {
-
-                throw new Exception("Data Was not in given format");
-            }
 
         }
 

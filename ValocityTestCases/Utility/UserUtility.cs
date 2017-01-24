@@ -34,9 +34,11 @@ namespace ValocityTestCases.Utility
             try
             {
                 IWebDriver driver = DriverAccess.Shared();
+                UserUtility.LogedInUser = null;
                 if (State.GetUrlStateWithoutBase().ToString() != Links.Route_Velocity_Login.ToString())
                 {
 
+                    Wait.WaitUntilElementClickAble(By.XPath(CommonElements.MyAccount_Dropdown_Xpath));
                     SeleniumExtension.click(By.XPath(CommonElements.MyAccount_Dropdown_Xpath));
                     Wait.InSeconds(1);
                     SeleniumExtension.click(By.XPath(CommonElements.Logout_btn_Xpath));

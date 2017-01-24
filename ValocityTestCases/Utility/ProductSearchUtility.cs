@@ -55,7 +55,7 @@ namespace ValocityTestCases.Utility
                 {
                     break;
                 }
-            } while (!ProductSearchUtility.NextPage());
+            } while (ProductSearchUtility.NextPage());
             if (Result == null)
             {
                 throw new Exception("No Element found from search Result on Given critaria.");
