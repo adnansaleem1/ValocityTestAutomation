@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityTestCases", "ValocityTestCases\VelocityTestCases.csproj", "{CCC6530F-CE7C-404C-9219-A516DABEC1D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityTestCases", "VelocityTestCases\VelocityTestCases.csproj", "{CCC6530F-CE7C-404C-9219-A516DABEC1D2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B36BFD82-FD2B-4680-ADE9-EEFC7B1063A4}"
 	ProjectSection(SolutionItems) = preProject
