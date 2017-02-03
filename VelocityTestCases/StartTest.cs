@@ -63,7 +63,7 @@ namespace VelocityTestCases
                 string ProductID = "";
                 IWebDriver driver = DriverAccess.Shared();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductUtility.AddNewProductInItDialog(Info.NewProduct_Name, Info.NewProduct_Description, Info.NewProduct_Type_Text);
                 //SeleniumExtension.click(By.XPath(TestElements.AddProduct_Apply_btn_Xpath));
@@ -134,7 +134,7 @@ namespace VelocityTestCases
                 }
                 //TestCasesCommon.LogoutUser();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 //   Wait.WaitUntilElementClickAble(By.XPath(TestElements.AddProduct_ManageProducts_tab_Xpath));
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SearchProductByName("\"" + Info.NewProduct_Name_Restricted + "\"");
@@ -188,7 +188,7 @@ namespace VelocityTestCases
                 }
                 //TestCasesCommon.LogoutUser();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 //   Wait.WaitUntilElementClickAble(By.XPath(TestElements.AddProduct_ManageProducts_tab_Xpath));
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SearchProductByName("\"" + Info.NewProduct_Name_Restricted + "\"");
@@ -215,7 +215,7 @@ namespace VelocityTestCases
                 string ProductID = "";
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 IWebDriver driver = DriverAccess.Shared();
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductUtility.AddNewProductInItDialog(Info.NewProduct_Name, Info.NewProduct_Description, Info.NewProduct_Type_Text);
                 ProductUtility.FillProductBasicInfo(Info.NewProduct_Summary, Info.NewProduct_Catogories, Info.NewProduct_Keywords);
@@ -256,7 +256,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("DeleteImageForProduct");
                 IWebDriver driver = DriverAccess.Shared();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 //Make Sure At least one record is available for this name
                 ProductSearchUtility.SearchProductByName("\"" + Info.NewProduct_Name_deleteImage + "\"");
@@ -291,7 +291,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("InActiveProduct");
                 IWebDriver driver = DriverAccess.Shared();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SearchProductByName("\"" + Info.Product_Name_ActiveProductToInactive + "\"");
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(true), "Make Inactive");//TestCasesCommon.InActiveProductInSearchResult();
@@ -316,7 +316,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("Update_Edit_AlreadyActiveProduct");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 IWebDriver driver = DriverAccess.Shared();
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SearchProductByName("\"" + Info.Active_Product_Name_ForUpdate + "\"");
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(true), "Edit");
@@ -364,7 +364,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("CopyProductAndActiveIt");
                 IWebDriver driver = DriverAccess.Shared();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SearchProductByName("\"" + Info.Active_Product_Name_ForCopy + "\"");
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(true), "Copy");
@@ -405,7 +405,7 @@ namespace VelocityTestCases
 
                 IWebDriver driver = DriverAccess.Shared();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SearchProductByName("\"" + Info.Search_Product_Name_BulkOperation + "\"");
                 //ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(false), "Delete");
@@ -479,7 +479,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("SearchUsingKeyWords");
                 IWebDriver driver = DriverAccess.Shared();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 foreach (string kw in FilterInfo.SearchKeywordsList)
                 {
@@ -503,7 +503,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("SearchUsingDefaultFiltersSearch");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 IWebDriver driver = DriverAccess.Shared();
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 foreach (string filter in FilterInfo.DefaultFilterList)
                 {
@@ -531,7 +531,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("SearchUsingMoreFiltersSearch");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 IWebDriver driver = DriverAccess.Shared();
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 SeleniumExtension.ScrolElementToDisplayByElement(By.Id("MoreFiltersText"));
                 Wait.InSeconds(1);
@@ -560,7 +560,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("productResultSortBy");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 IWebDriver driver = DriverAccess.Shared();
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SortByName("Product Name");
                 Wait.InSeconds(2);
@@ -586,7 +586,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("NavigateThroughSearchResult");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 IWebDriver driver = DriverAccess.Shared();
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SearchProductByName(FilterInfo.ProductName_SearchForNavigation);
                 ProductSearchUtility.NextPage();
@@ -608,7 +608,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("DeleteActiveProduct");
                 IWebDriver driver = DriverAccess.Shared();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 //Make Sure At least one record is available for this name
                 ProductSearchUtility.SearchProductByName("\"" + Info.Product_Name_ActiveProduct + "\"");
@@ -635,7 +635,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("DeleteInActiveProduct");
                 IWebDriver driver = DriverAccess.Shared();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SearchProductByName("\"" + Info.Product_Name_ActiveProduct + "\"");
                 this.InActiveProduct();
@@ -663,7 +663,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("ReviewSuppliersInfo");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 IWebDriver driver = DriverAccess.Shared();
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Supplier_info);
                 Wait.InSeconds(2);
                 Logger.Log("Review Supplier info - pass", LogStatus.Pass, test);
@@ -684,7 +684,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("AddUpdateCataLog");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 IWebDriver driver = DriverAccess.Shared();
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.catalog_Compliances);
                 Catalog catalog = CatalogObject.Newcatalog;
                 CatalogUtility.AddCatalog(catalog);
@@ -706,7 +706,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("ReviewLicenceAggreement");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 IWebDriver driver = DriverAccess.Shared();
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 SeleniumExtension.click(By.LinkText("Help"));
                 SeleniumExtension.click(By.LinkText("License Agreement"));
                 Wait.WaitUntilElementDisply(By.Id("LicenseAgreementAlert"));
@@ -919,7 +919,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("DownloadPriceDefaultTemplate");
                 IWebDriver driver = DriverAccess.Shared();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 SeleniumExtension.click(By.XPath("//*[@id=\"dashboard-view\"]/div[2]/div[2]/div/div[2]/button[3]"));
                 SeleniumExtension.click(By.CssSelector("button[data-bind='click: $root.downloadTemplate']"));
@@ -1128,7 +1128,8 @@ namespace VelocityTestCases
                 test = extent.StartTest("API3NET_VerifyHiddenKeyWordsWithoutChange");
                 IWebDriver driver = DriverAccess.Shared();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
+
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SearchProductByName(Info.Added_Active_Product_Id_SPG);
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(false, Info.Added_Active_Product_Id_SPG), "Edit");
@@ -1173,7 +1174,7 @@ namespace VelocityTestCases
 
                 IWebDriver driver = DriverAccess.Shared();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHome();
+                State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SearchProductByID(Info.Added_Active_Product_Id_SPG);
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(false, Info.Added_Active_Product_Id_SPG), "Edit");
@@ -1292,8 +1293,9 @@ namespace VelocityTestCases
               //  Wait.InSeconds(5);
                 //UserUtility.LogoutVelocity();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHomeByID("101574");
+                State.GotoSupplierHomeByID(Credentials.distributer_AsiNumber);
                 Wait.WaitUntilElementDisply(By.LinkText("Manage Products"));
+                Wait.InSeconds(2);
                 SeleniumExtension.ElementInDisplayTest(By.ClassName("espwebsitesLogo"));
                 Logger.Log("Esp_CheckWebSitesLogo - Pass");
             }
@@ -1314,7 +1316,7 @@ namespace VelocityTestCases
                 Info.Dist_PrivateProductNumber = "ATC" + Config.TestIterationName_number + "PR";
                 Info.Dist_PrivateProductName = Info.NewProduct_Name;
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHomeByID(Credentials.VelocityEIT_User.ASINumber);
+                State.GotoSupplierHomeByID(Credentials.distributer_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductUtility.AddNewProductInItDialog(Info.Dist_PrivateProductName, Info.NewProduct_Description, Info.NewProduct_Type_Text);
                 //SeleniumExtension.click(By.XPath(TestElements.AddProduct_Apply_btn_Xpath));
@@ -1358,7 +1360,7 @@ namespace VelocityTestCases
             {
                 test = extent.StartTest("Dist_VerifyPrivateProductInESPWebsites");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHomeByID(Credentials.VelocityEIT_User.ASINumber);
+                State.GotoSupplierHomeByID(Credentials.distributer_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 State.SwitchApplication(Application.EspWebSites);
                 IList<IWebElement> WebSiteList = driver.FindElement(By.Id("siteList")).FindElements(By.ClassName("list-item"));
@@ -1388,10 +1390,10 @@ namespace VelocityTestCases
                 SeleniumExtension.click(By.LinkText("Product Collections"));
                 Wait.WaitUntilElementDisply(By.LinkText("Manage Product Collections"));
                 SeleniumExtension.click(By.LinkText("Manage Product Collections"));
-                IWebElement CollectionRow = driver.FindElement(By.Id("ctl03_ctl10_gridProductSets")).FindElements(By.TagName("tr"))[0];
+                IWebElement CollectionRow = driver.FindElement(By.CssSelector("table[role='grid']")).FindElements(By.TagName("tr"))[1];
                 CollectionRow.FindElement(By.LinkText("Search")).Click();
                 Wait.WaitUntilElementDisply(By.Id("topBreadcrumbs"));
-                IWebElement NewAddedProduct = ProductUtility.SearchProductInWebSite(Info.Dist_PrivateProductName, Credentials.VelocityEIT_User.ASINumber, Info.Dist_PrivateProductNumber, Info.Dist_PrivateProductName);
+                IWebElement NewAddedProduct = ProductUtility.SearchProductInWebSite(Info.Dist_PrivateProductName, Credentials.distributer_AsiNumber, Info.Dist_PrivateProductNumber, Info.Dist_PrivateProductName);
                 if (NewAddedProduct != null)
                 {
                     throw new Exception("Private Product is Visible in Esp Websites");
@@ -1415,7 +1417,7 @@ namespace VelocityTestCases
             {
                 test = extent.StartTest("Dist_AddPrivateProductToCompanyStore");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHomeByID(Credentials.VelocityEIT_User.ASINumber);
+                State.GotoSupplierHomeByID(Credentials.distributer_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
             }
             catch (Exception ex)
@@ -1434,7 +1436,7 @@ namespace VelocityTestCases
                 Info.Dist_ShareProductName = Info.NewProduct_Name;
                 test = extent.StartTest("Dist_AddsharedProduct");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHomeByID(Credentials.VelocityEIT_User.ASINumber);
+                State.GotoSupplierHomeByID(Credentials.distributer_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductUtility.AddNewProductInItDialog(Info.Dist_ShareProductName, Info.NewProduct_Description, Info.NewProduct_Type_Text);
                 //SeleniumExtension.click(By.XPath(TestElements.AddProduct_Apply_btn_Xpath));
@@ -1476,7 +1478,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("Dist_VerifySharedProductInESPWebsites");
                 Wait.InMinute(WaitTimeForVerification);
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHomeByID(Credentials.VelocityEIT_User.ASINumber);
+                State.GotoSupplierHomeByID(Credentials.distributer_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 State.SwitchApplication(Application.EspWebSites);
                 IList<IWebElement> WebSiteList = driver.FindElement(By.Id( "siteList")).FindElements(By.ClassName("list-item"));
@@ -1510,7 +1512,7 @@ namespace VelocityTestCases
                 IWebElement CollectionRow = driver.FindElement(By.Id( "ctl03_ctl10_gridProductSets")).FindElements(By.TagName("tr"))[0];
                 CollectionRow.FindElement(By.LinkText("Search")).Click();
                 Wait.WaitUntilElementDisply(By.Id("topBreadcrumbs"));
-                IWebElement NewAddedProduct = ProductUtility.SearchProductInWebSite(Info.Dist_ShareProductName, Credentials.VelocityEIT_User.ASINumber, Info.Dist_SharedProductNumber, Info.Dist_ShareProductName);
+                IWebElement NewAddedProduct = ProductUtility.SearchProductInWebSite(Info.Dist_ShareProductName, Credentials.distributer_AsiNumber, Info.Dist_SharedProductNumber, Info.Dist_ShareProductName);
                 if (NewAddedProduct == null)
                 {
                     throw new Exception(string.Format("Unable to Find New Added Product in website After {0} Mins", WaitTimeForVerification));
@@ -1533,17 +1535,17 @@ namespace VelocityTestCases
             {
                 test = extent.StartTest("Dist_AddPrivateProductToCompanyStore");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHomeByID(Credentials.VelocityEIT_User.ASINumber);
+                State.GotoSupplierHomeByID(Credentials.distributer_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                // State.SwitchApplication(Application.EspWebSites);
                 SeleniumExtension.click(By.XPath("//*[@id=\"dashboard-view\"]/div[2]/div[2]/div/div[2]/button[2]"));
-                Wait.WaitUntilElementDisply(By.Id("refinements"));
+                Wait.WaitUntilElementDisply(By.Id("Summary"));
                 // Wait.WaitUntilElementDisply(By.LinkText("Manage Product Collections"));
                 IWebElement SupplyProduct = ProductUtility.SearchProductInWebSite("VS1316", "93251");
                 if (SupplyProduct != null)
                 {
                     SupplyProduct.FindElement(By.Id("btnProductDetail")).Click();
-                    Wait.WaitUntilElementDisply(By.ClassName("productDetails"));
+                    Wait.WaitUntilElementDisply(By.ClassName("product-details-container"));
                     ImagesCount = driver.FindElement(By.ClassName("imageStrip")).FindElements(By.TagName("li")).Count;
                     PriceGridCount = driver.FindElements(By.ClassName("priceGridTop")).Count;
                     driver.FindElement(By.LinkText("Create Custom Product")).Click();
@@ -1590,7 +1592,7 @@ namespace VelocityTestCases
             {
                 test = extent.StartTest("Dist_SupplierInfoPageShouldNotBeThere");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHomeByID(Credentials.VelocityEIT_User.ASINumber);
+                State.GotoSupplierHomeByID(Credentials.distributer_AsiNumber);
                 try
                 {
                     Wait.WaitUntilElementClickAble(By.LinkText("Manage Products"));
@@ -1616,7 +1618,7 @@ namespace VelocityTestCases
             {
                 test = extent.StartTest("Dist_LicenseAgreementReview");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-                State.GotoSupplierHomeByID(Credentials.VelocityEIT_User.ASINumber);
+                State.GotoSupplierHomeByID(Credentials.distributer_AsiNumber);
                 Wait.WaitUntilElementClickAble(By.LinkText("Manage Products"));
                 SeleniumExtension.click(By.LinkText("Help"));
                 SeleniumExtension.click(By.LinkText("License Agreement"));
@@ -1641,7 +1643,7 @@ namespace VelocityTestCases
 
             test = extent.StartTest("Dist_Compliance_ImportExport_BulkOperations_ShouldNotBeThere");
             UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
-            State.GotoSupplierHomeByID(Credentials.VelocityEIT_User.ASINumber);
+            State.GotoSupplierHomeByID(Credentials.distributer_AsiNumber);
             State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
 
             if (SeleniumExtension.ElementDisplay(By.LinkText("Catalog & Compliance")))
@@ -1673,7 +1675,7 @@ namespace VelocityTestCases
                 test = extent.StartTest("Decorator_Create_UpdateProduct");
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 State.GotoEITHome();
-                State.GotoSupplierHomeByID("788888");
+                State.GotoSupplierHomeByID(Credentials.Decorator_AsiId);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductUtility.AddNewProductInItDialog(Info.Dist_ShareProductName, Info.NewProduct_Description, Info.NewProduct_Type_Text);
                 //SeleniumExtension.click(By.XPath(TestElements.AddProduct_Apply_btn_Xpath));
@@ -1694,7 +1696,7 @@ namespace VelocityTestCases
                     State.GotoSupplierHome();
                     State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                     ProductSearchUtility.SearchProductByName("\"" + Info.Dist_ShareProductName + "\"");
-                    ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(false), "Edit");
+                    ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(true), "Edit");
                     Wait.WaitUntilLoadingInVisible(By.ClassName(CommonElements.loadingBackDrop_div_Class));
                     ProductUtility.EditBasicInfo(Info.NewProduct_Update_Summary + Config.TestIterationName_number, Info.NewProduct_Update_Keywords);
                     ProductUtility.MakeActive();

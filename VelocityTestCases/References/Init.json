@@ -7,6 +7,86 @@
         URL_MMS: "http://stage-mms2.asinetwork.local/",
         VelocityUser: [
             {
+                UserName: "as101574",
+                Password: "Adnan1234",
+                ASINumber: "101574",
+                Type: "Eit"
+            },
+            {
+                UserName: "ads30232",
+                Password: "Adnan1234",
+                ASINumber: "30232",
+                Type: "External"
+            }
+        ],
+        APIUser: [
+            {
+                UserName: "ads30232",
+                Password: "Adnan1234",
+                ASINumber: "30232",
+                version: "JavaV2"
+            },
+            {
+                UserName: "ads30232",
+                Password: "Adnan1234",
+                ASINumber: "30232",
+                version: "JavaV3"
+            },
+            {
+                UserName: "ads30232",
+                Password: "Adnan1234",
+                ASINumber: "30232",
+                version: "NetV3"
+            }
+        ]
+    },
+    uat: {
+        URL_VelocityBase: "http://uat-espupdates.asicentral.com",
+        ApiBasePath: "https://uat-productservice.asicentral.com",
+        URL_ESP_Web: "http://uat-espweb.asicentral.com",
+        URL_MMS: "http://uat-mms2.asinetwork.local/",
+        VelocityUser: [
+            {
+                UserName: "as101574",
+                Password: "Adnan1234",
+                ASINumber: "101574",
+                Type: "Eit"
+            },
+            {
+                UserName: "ads30232",
+                Password: "Adnan1234",
+                ASINumber: "30232",
+                Type: "External"
+            }
+        ],
+        APIUser: [
+            {
+                UserName: "ads30232",
+                Password: "Adnan1234",
+                ASINumber: "30232",
+                version: "JavaV2"
+            },
+            {
+                UserName: "ads30232",
+                Password: "Adnan1234",
+                ASINumber: "30232",
+                version: "JavaV3"
+            },
+            {
+                UserName: "ads30232",
+                Password: "Adnan1234",
+                ASINumber: "30232",
+                version: "NetV3"
+            }
+        ]
+    },
+    production: {
+        URL_VelocityBase: "http://stage-espupdates.asicentral.com",
+        ApiBasePath: "https://stage-productservice.asicentral.com",
+        URL_ESP_Web: "http://stage-espweb.asicentral.com",
+        URL_MMS: "http://stage-mms2.asinetwork.local/",
+        VelocityUser: [
+            {
                 UserName: "101574nm",
                 Password: "Abcd2345",
                 ASINumber: "101574",
@@ -39,84 +119,5 @@
                 version: "NetV3"
             }
         ]
-    },
-    uat: {
-        URL_VelocityBase: "http://uat-espupdates.asicentral.com",
-        ApiBasePath: "https://uat-productservice.asicentral.com",
-        URL_ESP_Web: "http://uat-espweb.asicentral.com",
-        URL_MMS: "http://uat-mms2.asinetwork.local/",
-        VelocityUser: [
-            {
-                UserName: "asaleem",
-                Password: "adnansaleem2",
-                ASINumber: "30235",
-                Type: "Eit"
-            },
-            {
-                UserName: "eeeeee",
-                Password: "Macro1234",
-                ASINumber: "30235",
-                Type: "External"
-            }
-        ],
-        APIUser: [
-            {
-                UserName: "asaleem",
-                Password: "adnansaleem2",
-                ASINumber: "30235",
-                version: "JavaV2"
-            },
-            {
-                 UserName: "asaleem",
-                Password: "adnansaleem2",
-                ASINumber: "30235",
-                version: "JavaV3"
-            },
-            {
-                UserName: "asaleem",
-                Password: "adnansaleem2",
-                ASINumber: "30235",
-                version: "NetV3"
-            }
-        ]
-    },
-    production: {
-    URL_VelocityBase: "http://stage-espupdates.asicentral.com",
-    ApiBasePath: "https://stage-productservice.asicentral.com",
-    URL_ESP_Web: "http://stage-espweb.asicentral.com",
-    URL_MMS: "http://stage-mms2.asinetwork.local/",
-    VelocityUser: [
-      {
-        UserName: "101574nm",
-        Password: "Abcd2345",
-        ASINumber: "101574",
-        Type: "Eit"
-      },
-      {
-        UserName: "e2",
-        Password: "Macro1234",
-        ASINumber: "30232",
-        Type: "External"
-      }
-    ],APIUser: [
-      {
-        UserName: "e2",
-        Password: "Macro1234",
-        ASINumber: "30232",
-        version: "JavaV2"
-      },
-      {
-        UserName: "e2",
-        Password: "Macro1234",
-        ASINumber: "30232",
-        version: "JavaV3"
-      },
-      {
-        UserName: "e2",
-        Password: "Macro1234",
-        ASINumber: "30232",
-        version: "NetV3"
-      }
-    ]
-  }
+    }
 }

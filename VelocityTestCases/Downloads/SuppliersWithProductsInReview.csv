@@ -1,4 +1,4 @@
-Suppliers with Products in Review,,,,1/26/2017
+Suppliers with Products in Review,,,,2/2/2017
 MemberTypeCode, "asi #", "company name", "supplier level", "SSO", "prod_ID", "prod #", "prod name", "Reason For Review", "Comment", "Review Date"
 SPLR,"30003","A A Patch Works, Inc",8,[not recorded],550750292,,"Active Submitted to review for Keywords","Restricted words","banker",12/11/2016
 SPLR,"30003","A A Patch Works, Inc",8,[not recorded],550750293,,"InActive Submitted to review for Keywords","Restricted words","banker",12/11/2016
@@ -259,6 +259,7 @@ SPLR,"30232","ASIQA Supplier I",9,e2,550771146,,"Leatherman CamelBak Bottle","Re
 SPLR,"30232","ASIQA Supplier I",9,e2,550776658,,"Leatherman CamelBak","Restricted words","E-Z Up",1/4/2017
 SPLR,"30232","ASIQA Supplier I",9,e2,550779710,,"Leatherman CamelBak Bottle","Restricted words","E-Z Up",1/20/2017
 SPLR,"30232","ASIQA Supplier I",9,e2,550786191,,"Leatherman CamelB","Restricted words","E-Z Up",1/24/2017
+SPLR,"30232","ASIQA Supplier I",9,e2,550786466,,"Leatherman CamelBak Bottle","Restricted words","E-Z Up",1/31/2017
 SPLR,"49727","Digital Packaging Inc (DPI)",6,ecdinc@aol.com,550498199,DHFIPU,"The Phonic Stereo Earbud","Legal Review","infringement",7/8/2016
 SPLR,"78154","Pinnacle Promotion Supply",9,[Login Id 31935 not located in user database],550242788,PPBC6,"Power Bank Phone Case - iPhone 6","Legal Review","",1/14/2016
 SPLR,"78154","Pinnacle Promotion Supply",9,[Login Id 31935 not located in user database],550242821,PPBC5,"Power Bank Phone Case - iPhone 5","Legal Review","",1/14/2016

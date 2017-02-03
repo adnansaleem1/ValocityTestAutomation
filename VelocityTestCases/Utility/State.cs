@@ -131,17 +131,17 @@ namespace VelocityTestCases.Utility
             IWebDriver driver = DriverAccess.Shared();
             string localPath = State.GetUrlStateWithoutBase().ToString();
             string home = State.GetUrlBase();
-             ApplicationState appstate=State.IdentifyApplicationState();
+            ApplicationState appstate = State.IdentifyApplicationState();
             if (UserUtility.LogedInUser.Type == VelocityUserType.Eit)
             {
-               
+
                 if (appstate == ApplicationState.EIT_User_Home_Page_Tabs)
                 {
                     //  driver.Url = home + Links.Velocity_Eit_Home;
                     State.TabSwitchByName(EITUserTabItems.Manage_Products);
-                    UserUtility.VelocityLoginAsSupplier(Credentials.Velocity_SupplierID);
+                    UserUtility.VelocityLoginAsSupplier(UserUtility.LogedInUser.ASINumber);
                 }
-                else if (appstate==ApplicationState.ProdcutInfo_Page_Tabs)
+                else if (appstate == ApplicationState.ProdcutInfo_Page_Tabs)
                 {
                     SeleniumExtension.ScrolElementToDisplayByElement(By.LinkText("Manage My Products"));
                     Wait.WaitUntilElementClickAble(By.LinkText("Manage My Products"));
@@ -151,7 +151,8 @@ namespace VelocityTestCases.Utility
             }
             else if (UserUtility.LogedInUser.Type == VelocityUserType.External)
             {
-                if(appstate==ApplicationState.ProdcutInfo_Page_Tabs){
+                if (appstate == ApplicationState.ProdcutInfo_Page_Tabs)
+                {
                     SeleniumExtension.ScrolElementToDisplayByElement(By.LinkText("Manage My Products"));
                     Wait.WaitUntilElementClickAble(By.LinkText("Manage My Products"));
                     SeleniumExtension.click(By.LinkText("Manage My Products"));
@@ -161,7 +162,7 @@ namespace VelocityTestCases.Utility
             }
         }
         public static ApplicationState IdentifyApplicationState()
-        { 
+        {
             IWebDriver driver = DriverAccess.Shared();
             if (SeleniumExtension.ElementExists(By.LinkText("Media Library")) && SeleniumExtension.ElementExists(By.LinkText("Manage Products")))
             {
@@ -175,11 +176,12 @@ namespace VelocityTestCases.Utility
             {
                 return ApplicationState.EIT_User_Home_Page_Tabs;
             }
-            else {
+            else
+            {
 
                 throw new TestCaseException("Unable to identify Syetem State.!");
             }
-        
+
         }
 
         private static string GetUrlBase()
@@ -212,17 +214,20 @@ namespace VelocityTestCases.Utility
 
         internal static void RemoveDialogsFromPreviousTests()
         {
-                   IWebDriver driver = DriverAccess.Shared();
-                   if (SeleniumExtension.ElementDisplay(By.ClassName("modal-backdrop"))) {
-                       IList<IWebElement> headeres = driver.FindElements(By.ClassName("modal-header"));
-                       foreach (IWebElement ele in headeres) {
-                           if (ele.Displayed) {
-                               ele.FindElement(By.TagName("button")).Click();
-                               Wait.InSeconds(2);
-                           }
-                       }
+            IWebDriver driver = DriverAccess.Shared();
+            if (SeleniumExtension.ElementDisplay(By.ClassName("modal-backdrop")))
+            {
+                IList<IWebElement> headeres = driver.FindElements(By.ClassName("modal-header"));
+                foreach (IWebElement ele in headeres)
+                {
+                    if (ele.Displayed)
+                    {
+                        ele.FindElement(By.TagName("button")).Click();
+                        Wait.InSeconds(2);
+                    }
+                }
 
-                   }
+            }
         }
 
         internal static void GotoSupplierHomeByID(string Id)
@@ -266,13 +271,15 @@ namespace VelocityTestCases.Utility
 
             IWebDriver driver = DriverAccess.Shared();
 
-            if (application == Application.EspWebSites) {
+            if (application == Application.EspWebSites)
+            {
                 SeleniumExtension.click(By.LinkText("My Applications"));
                 Wait.InSeconds(1);
                 SeleniumExtension.click(By.LinkText("ESP Websites Admin"));
-                Wait.WaitUntilElementDisply(By.Id("ContentZoneRow2Col1"), 15);
+                Wait.WaitUntilElementDisply(By.Id("siteList"), 15);
             }
-            else if (application == Application.EspUpdates) {
+            else if (application == Application.EspUpdates)
+            {
 
                 try
                 {
@@ -283,15 +290,26 @@ namespace VelocityTestCases.Utility
                 }
                 catch (Exception)
                 {
-                    IList<IWebElement> ButtonsList = driver.FindElement(By.ClassName("appToolBarStrip")).FindElements(By.TagName("button"));
-                    var App=ButtonsList.First(e => e.FindElement(By.TagName("span")).Text == "My Applications");
-                    App.Click();
-                    Wait.InSeconds(1);
-                    SeleniumExtension.click(By.LinkText("ESP Updates"));
-                    Wait.WaitUntilElementDisply(By.Id("supplierSearchTextBox"), 15);
+                    try
+                    {
+
+                        IList<IWebElement> ButtonsList = driver.FindElement(By.ClassName("appToolBarStrip")).FindElements(By.TagName("button"));
+                        var App = ButtonsList.First(e => e.FindElement(By.TagName("span")).Text == "My Applications");
+                        App.Click();
+                        Wait.InSeconds(1);
+                        SeleniumExtension.click(By.LinkText("ESP Updates"));
+                        Wait.WaitUntilElementDisply(By.Id("supplierSearchTextBox"), 15);
+                    }
+                    catch (Exception)
+                    {
+                        driver.FindElement(By.Id("userInfo")).Click();
+                        Wait.InSeconds(1);
+                        SeleniumExtension.click(By.LinkText("ESP Updates"));
+                        Wait.WaitUntilElementDisply(By.Id("supplierSearchTextBox"), 15);
+                    }
 
                 }
-            
+
             }
         }
     }
