@@ -1514,10 +1514,10 @@ namespace VelocityTestCases
                 IWebElement CollectionRow = driver.FindElement(By.CssSelector("table[role='grid']")).FindElements(By.TagName("tr"))[1];
                 CollectionRow.FindElement(By.LinkText("Search")).Click();
                 Wait.WaitUntilElementDisply(By.Id("topBreadcrumbs"));
-                IWebElement NewAddedProduct = ProductUtility.SearchProductInWebSite(Info.Dist_ShareProductName, Credentials.distributer_AsiNumber, Info.Dist_SharedProductNumber, Info.Dist_ShareProductName);
+                IWebElement NewAddedProduct = ProductUtility.SearchProductInWebSite("\""+Info.Dist_SharedProductNumber+"\"", Credentials.distributer_AsiNumber, Info.Dist_SharedProductNumber, Info.Dist_ShareProductName);
                 if (NewAddedProduct == null)
                 {
-                    throw new Exception(string.Format("Unable to Find New Added Product in website After {0} Mins", WaitTimeForVerification));
+                    throw new Exception(string.Format("Unable to Find New Added Product(Id:{0}) in website After {1} Mins", Info.Dist_SharedProductNumber, WaitTimeForVerification));
                 }
 
             }
