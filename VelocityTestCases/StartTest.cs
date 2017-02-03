@@ -950,8 +950,9 @@ namespace VelocityTestCases
         {
             try
             {
-                test = extent.StartTest("API2_GetProductById");
                 this.AddProductWithSPG();
+                test = extent.StartTest("API2_GetProductById");
+
                 string productId = Info.Added_Active_Product_Id_SPG;
                 UserUtility.LoginToAPI(Credentials.APIV2_User);
                 ProductObject po = ApiOperations.GetProductByID(productId, Credentials.APIV2_User);
@@ -1079,8 +1080,9 @@ namespace VelocityTestCases
         {
             try
             {
-                test = extent.StartTest("API3NET_GetProductById");
                 this.AddProductWithSPG();
+                test = extent.StartTest("API3NET_GetProductById");
+                
                 string productId = Info.Added_Active_Product_Id_SPG;
                 UserUtility.LoginToAPI(Credentials.APIV3Net_User);
                 ProductObject po = ApiOperations.GetProductByID(productId, Credentials.APIV3Net_User);
@@ -1509,7 +1511,7 @@ namespace VelocityTestCases
                 SeleniumExtension.click(By.LinkText("Product Collections"));
                 Wait.WaitUntilElementDisply(By.LinkText("Manage Product Collections"));
                 SeleniumExtension.click(By.LinkText("Manage Product Collections"));
-                IWebElement CollectionRow = driver.FindElement(By.Id( "ctl03_ctl10_gridProductSets")).FindElements(By.TagName("tr"))[0];
+                IWebElement CollectionRow = driver.FindElement(By.CssSelector("table[role='grid']")).FindElements(By.TagName("tr"))[1];
                 CollectionRow.FindElement(By.LinkText("Search")).Click();
                 Wait.WaitUntilElementDisply(By.Id("topBreadcrumbs"));
                 IWebElement NewAddedProduct = ProductUtility.SearchProductInWebSite(Info.Dist_ShareProductName, Credentials.distributer_AsiNumber, Info.Dist_SharedProductNumber, Info.Dist_ShareProductName);
@@ -1803,9 +1805,25 @@ namespace VelocityTestCases
         [TearDown]
         public void AddScreenShot()
         {
-            test.Log(LogStatus.Info, "Screencast below: " + test.AddScreenCapture(Config.DefaultProjectPath + @"\Report"));
+            test.Log(LogStatus.Info, "Screencast below: " + test.AddScreenCapture(this.TakeScreenShot()));
         }
+        public string TakeScreenShot()
+        {
+            try
+            {
 
+                IWebDriver driver = DriverAccess.Shared();
+                Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                string Path = Config.DefaultProjectPath + @"Report\" + test.GetTest().Name+".png";
+                ss.SaveAsFile(Path, System.Drawing.Imaging.ImageFormat.Png);
+                return Path ;
+            }
+            catch (Exception ex)
+            {
+
+                return "";
+            }
+        }
         [OneTimeTearDown]
         public void TearDownApplication()
         {

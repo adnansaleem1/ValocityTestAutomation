@@ -461,28 +461,52 @@ namespace VelocityTestCases.Utility
             SeleniumExtension.AddTextToField(By.Id("ctl03_ctl00_txtSearchTerms"), SearchTerm);
             SeleniumExtension.click(By.LinkText("Go"));
             Wait.WaitUntilElementDisply(By.LinkText("Go"));
-            IReadOnlyList<IWebElement> pList = driver.FindElements(By.ClassName("prod-tile"));
             IWebElement SupplyProduct = null;
-            foreach (IWebElement ele in pList)
+            do
             {
-                try
+                IReadOnlyList<IWebElement> pList = driver.FindElements(By.ClassName("prod-tile"));
+                
+                foreach (IWebElement ele in pList)
                 {
-                    string eleAsiNumber = ele.FindElement(By.ClassName("asiNum")).Text;
-                    string eleProductNumber = ele.FindElement(By.Id("btnProductDetail")).Text.Split(new string[] { "  " }, StringSplitOptions.RemoveEmptyEntries)[0].ToString();
-                    string eleProductName = ele.FindElement(By.Id("btnProductDetail")).Text.Split(new string[] { "  " }, StringSplitOptions.RemoveEmptyEntries)[1].ToString();
-
-                    if ((SupplierID == "" || eleAsiNumber.Split('/')[1] == SupplierID) && (ProductNumber == "" || eleProductNumber == ProductNumber) && (ProductName == "" || eleProductName == ProductName))
+                    try
                     {
-                        SupplyProduct = ele;
-                        break;
+                        string eleAsiNumber = ele.FindElement(By.ClassName("asiNum")).Text;
+                        string eleProductNumber = ele.FindElement(By.Id("btnProductDetail")).Text.Split(new string[] { "  " }, StringSplitOptions.RemoveEmptyEntries)[0].ToString();
+                        string eleProductName = ele.FindElement(By.Id("btnProductDetail")).Text.Split(new string[] { "  " }, StringSplitOptions.RemoveEmptyEntries)[1].ToString();
+
+                        if ((SupplierID == "" || eleAsiNumber.Split('/')[1] == SupplierID) && (ProductNumber == "" || eleProductNumber == ProductNumber) && (ProductName == "" || eleProductName == ProductName))
+                        {
+                            SupplyProduct = ele;
+                            break;
+                        }
+                    }
+                    catch (Exception)
+                    {
+
                     }
                 }
-                catch (Exception)
-                {
+            } while (ProductUtility.SharedProdutNextPage());
 
-                }
-            }
+            
+
             return SupplyProduct;
+        }
+
+        private static bool SharedProdutNextPage()
+        {
+            IWebDriver driver = DriverAccess.Shared();
+            try
+            {
+
+                driver.FindElement(By.ClassName("endecaPageNext")).Click();
+                Wait.WaitUntilElementDisply(By.Id("Summary"));
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
 

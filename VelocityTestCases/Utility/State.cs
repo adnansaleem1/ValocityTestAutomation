@@ -239,6 +239,8 @@ namespace VelocityTestCases.Utility
             if (UserUtility.LogedInUser.Type == VelocityUserType.Eit)
             {
 
+
+
                 if (appstate == ApplicationState.EIT_User_Home_Page_Tabs)
                 {
                     //  driver.Url = home + Links.Velocity_Eit_Home;
@@ -252,6 +254,12 @@ namespace VelocityTestCases.Utility
                     SeleniumExtension.click(By.LinkText("Manage My Products"));
                     Wait.WaitUntilElementDisply(By.Id("supplierSearchTextBox"));
                 }
+                else if(appstate==ApplicationState.Supplier_Home_Page_Tabs){
+                    if (State.SupplierId() != Id) {
+                        State.GotoEITHome();
+                        State.GotoSupplierHomeByID(Id);
+                    }
+                }
             }
             else if (UserUtility.LogedInUser.Type == VelocityUserType.External)
             {
@@ -261,9 +269,16 @@ namespace VelocityTestCases.Utility
                     Wait.WaitUntilElementClickAble(By.LinkText("Manage My Products"));
                     SeleniumExtension.click(By.LinkText("Manage My Products"));
                     Wait.WaitUntilElementDisply(By.Id("supplierSearchTextBox"));
+                    
                 }
 
             }
+        }
+
+        private static string SupplierId()
+        {
+            IWebDriver driver = DriverAccess.Shared();
+            return driver.FindElement(By.Id("asinum")).Text.Split('/')[1];
         }
 
         internal static void SwitchApplication(Application application)
@@ -276,6 +291,14 @@ namespace VelocityTestCases.Utility
                 SeleniumExtension.click(By.LinkText("My Applications"));
                 Wait.InSeconds(1);
                 SeleniumExtension.click(By.LinkText("ESP Websites Admin"));
+                Wait.InSeconds(3);
+                if (State.IsLogout()) {
+                    UserUtility.LoginToVelocity(UserUtility.LogedInUser);
+                    State.GotoSupplierHome();
+                    SeleniumExtension.click(By.LinkText("My Applications"));
+                    Wait.InSeconds(1);
+                    SeleniumExtension.click(By.LinkText("ESP Websites Admin"));
+                }
                 Wait.WaitUntilElementDisply(By.Id("siteList"), 15);
             }
             else if (application == Application.EspUpdates)
@@ -311,6 +334,11 @@ namespace VelocityTestCases.Utility
                 }
 
             }
+        }
+
+        private static bool IsLogout()
+        {
+            return SeleniumExtension.GetLocalPath().Contains("/login");
         }
     }
 }
