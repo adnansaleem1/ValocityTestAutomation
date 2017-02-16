@@ -451,6 +451,7 @@ namespace VelocityTestCases
                     }
                     else
                     {
+                        Wait.WaitUntilElementDisply(By.XPath(TestElements.BulkActive_OkBtn_Xpath));
                         SeleniumExtension.click(By.XPath(TestElements.BulkActive_OkBtn_Xpath));
                     }
                     Wait.InSeconds(1);

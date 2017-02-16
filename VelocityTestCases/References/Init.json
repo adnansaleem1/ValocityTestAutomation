@@ -1,5 +1,5 @@
 ﻿{
-    run: "uat",
+    run: "production",
     staging: {
         URL_VelocityBase: "http://stage-espupdates.asicentral.com",
         ApiBasePath: "https://stage-productservice.asicentral.com",
@@ -81,40 +81,40 @@
         ]
     },
     production: {
-        URL_VelocityBase: "http://stage-espupdates.asicentral.com",
-        ApiBasePath: "https://stage-productservice.asicentral.com",
-        URL_ESP_Web: "http://stage-espweb.asicentral.com",
-        URL_MMS: "http://stage-mms2.asinetwork.local/",
-        VelocityUser: [
+        URL_VelocityBase: "http://espupdates.asicentral.com",
+        ApiBasePath: "https://productservice.asicentral.com",
+        URL_ESP_Web: "http://espweb.asicentral.com",
+        URL_MMS: "http://mms2.asinetwork.local/",
+          VelocityUser: [
             {
-                UserName: "101574nm",
-                Password: "Abcd2345",
+                UserName: "as101574",
+                Password: "Adnan1234",
                 ASINumber: "101574",
                 Type: "Eit"
             },
             {
-                UserName: "e2",
-                Password: "Macro1234",
+                UserName: "ads30232",
+                Password: "Adnan1234",
                 ASINumber: "30232",
                 Type: "External"
             }
         ],
         APIUser: [
             {
-                UserName: "e2",
-                Password: "Macro1234",
+                UserName: "ads30232",
+                Password: "Adnan1234",
                 ASINumber: "30232",
                 version: "JavaV2"
             },
             {
-                UserName: "e2",
-                Password: "Macro1234",
+                UserName: "ads30232",
+                Password: "Adnan1234",
                 ASINumber: "30232",
                 version: "JavaV3"
             },
             {
-                UserName: "e2",
-                Password: "Macro1234",
+                UserName: "ads30232",
+                Password: "Adnan1234",
                 ASINumber: "30232",
                 version: "NetV3"
             }
