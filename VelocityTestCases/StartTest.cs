@@ -103,7 +103,7 @@ namespace VelocityTestCases
                 ProductUtility.SetProductColors();
                 PriceObjectSPG price = new PriceObjectSPG();
                 ProductUtility.SetPriceByObject(price.ProductPrice);
-                ProductUtility.MakeActive();
+                ProductUtility.MakeActiveRestricted();
                 Wait.UntilModalisVisible(By.ClassName("validatingModalPrice"));
                 Wait.InSeconds(2);
                 try

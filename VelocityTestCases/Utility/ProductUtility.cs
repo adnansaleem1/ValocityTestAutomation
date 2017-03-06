@@ -671,5 +671,37 @@ namespace VelocityTestCases.Utility
               Wait.InSeconds(1);
               SeleniumExtension.findButtonByText(driver.FindElement(By.ClassName(p)).FindElements(By.TagName("button")), "OK").Click();
           }
+
+          internal static void MakeActiveRestricted()
+          {
+              IWebDriver driver = DriverAccess.Shared();
+              IReadOnlyList<IWebElement> childs = driver.FindElement(By.Id("btnSection")).FindElements(By.ClassName("viewControls"));
+              foreach (IWebElement ele in childs)
+              {
+                  if (ele.Displayed)
+                  {
+                      IList<IWebElement> buttons = ele.FindElements(By.TagName("button"));
+                      IWebElement Activebtn = null;
+                      foreach (IWebElement btn in buttons)
+                      {
+                          if (Common.Compare(btn.Text, "Make Active"))
+                          {
+                              Activebtn = btn;
+                          }
+                      }
+                      if (Activebtn.Enabled)
+                      {
+                          Activebtn.Click();
+                          //Wait.UntilSucessMessageShow();
+                         Wait.WaitUntilLoadingInVisible();
+                          break;
+                      }
+                      else
+                      {
+                          throw new TestCaseException("Unable to Active Product there was no changes made");
+                      }
+                  }
+              }
+          }
     }
 }
