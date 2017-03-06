@@ -120,9 +120,8 @@ namespace VelocityTestCases.Utility
             //  SeleniumExtension.clickIfClickable(By.XPath("//*[@id=\"modalDeleteAllKeywords\"]/div[3]/a[2]"));
             SeleniumExtension.click(By.XPath(TestElements.AddProduct_Catagory_btn_Xpath));
             Wait.InSeconds(1);
-            SeleniumExtension.click(By.CssSelector(TestElements.AddProduct_CatogoriesAll_Btn_Attribute));
+            SeleniumExtension.TryToClick(By.CssSelector(TestElements.AddProduct_CatogoriesAll_Btn_Attribute));
             Wait.InSeconds(1);
-
             foreach (string Item in cat)
             {
                 SeleniumExtension.AddTextToField(By.XPath(TestElements.AddProduct_CatogriesSearch_Field_Xpath), Item);
@@ -159,7 +158,7 @@ namespace VelocityTestCases.Utility
                 SeleniumExtension.ScrolElementToDisplayByElement(By.Id("token-input-seoKeywords"));
 
                 SeleniumExtension.AddTextToField(By.Id("token-input-seoKeywords"), Info.hidden_Keywords);
-                Wait.InSeconds(1); 
+                Wait.InSeconds(1);
             }
             ProductUtility.SaveTabState();
         }
@@ -167,31 +166,35 @@ namespace VelocityTestCases.Utility
         {
 
             IWebDriver driver = DriverAccess.Shared();
-           IReadOnlyList<IWebElement> childs = driver.FindElement(By.Id("btnSection")).FindElements(By.ClassName("viewControls"));
-           foreach (IWebElement ele in childs) {
-               if (ele.Displayed)
-               {
-                   IList<IWebElement> buttons = ele.FindElements(By.TagName("button"));
-                   IWebElement savebtn=null;
-                   foreach (IWebElement btn in buttons) {
-                       if (Common.Compare(btn.Text, "Save")) {
-                           savebtn = btn;
-                       }
-                   }
-                 // IWebElement saveBtn= ele.FindElement(By.CssSelector("div[data-bind='visible: !isBulkOperation()']")).FindElements(By.TagName("button"))[0];
-                   if (savebtn.Enabled)
-                  {
-                      savebtn.Click();
-                      Wait.UntilSucessMessageShow();
-                      Wait.WaitUntilLoadingInVisible();
-                      break;
-                  }
-                  else {
-                      throw new TestCaseException("Unable to save tab State there was no changes made");
-                  }
-               }
-           }
-           
+            IReadOnlyList<IWebElement> childs = driver.FindElement(By.Id("btnSection")).FindElements(By.ClassName("viewControls"));
+            foreach (IWebElement ele in childs)
+            {
+                if (ele.Displayed)
+                {
+                    IList<IWebElement> buttons = ele.FindElements(By.TagName("button"));
+                    IWebElement savebtn = null;
+                    foreach (IWebElement btn in buttons)
+                    {
+                        if (Common.Compare(btn.Text, "Save"))
+                        {
+                            savebtn = btn;
+                        }
+                    }
+                    // IWebElement saveBtn= ele.FindElement(By.CssSelector("div[data-bind='visible: !isBulkOperation()']")).FindElements(By.TagName("button"))[0];
+                    if (savebtn.Enabled)
+                    {
+                        savebtn.Click();
+                        Wait.UntilSucessMessageShow();
+                        Wait.WaitUntilLoadingInVisible();
+                        break;
+                    }
+                    else
+                    {
+                        throw new TestCaseException("Unable to save tab State there was no changes made");
+                    }
+                }
+            }
+
         }
         internal static void MakeActive()
         {
@@ -201,27 +204,81 @@ namespace VelocityTestCases.Utility
             {
                 if (ele.Displayed)
                 {
-                   IList<IWebElement> buttons = ele.FindElements(By.TagName("button"));
-                   IWebElement Activebtn=null;
-                   foreach (IWebElement btn in buttons) {
-                       if (Common.Compare(btn.Text, "Make Active")) {
-                           Activebtn = btn;
-                       }
-                   }
-                   if (Activebtn.Enabled)
-                   {
-                       Activebtn.Click();
-                       //Wait.UntilSucessMessageShow();
-                       Wait.WaitUntilLoadingInVisible();
-                       break;
-                   }
+                    IList<IWebElement> buttons = ele.FindElements(By.TagName("button"));
+                    IWebElement Activebtn = null;
+                    foreach (IWebElement btn in buttons)
+                    {
+                        if (Common.Compare(btn.Text, "Make Active"))
+                        {
+                            Activebtn = btn;
+                        }
+                    }
+                    if (Activebtn.Enabled)
+                    {
+                        Activebtn.Click();
+                        //Wait.UntilSucessMessageShow();
+                        //Wait.WaitUntilLoadingInVisible();
+                        try
+                        {
+                            Wait.WaitUntilElementDisply(By.ClassName("effectiveDateModalPrice"));
+                            driver.FindElement(By.ClassName("effectiveDateModalPrice")).FindElement(By.Id("effectiveNow")).Click();
+                            Wait.InSeconds(1);
+                            SeleniumExtension.findButtonByText(driver.FindElement(By.ClassName("effectiveDateModalPrice")).FindElements(By.TagName("button")), "OK").Click();
+                        }
+                        catch (Exception) { }
+
+                        Wait.WaitUntilLoadingInVisible();
+                        break;
+                    }
                     else
                     {
                         throw new TestCaseException("Unable to Active Product there was no changes made");
                     }
                 }
             }
-                
+
+        }
+        internal static void MakeActiveImages()
+        {
+            IWebDriver driver = DriverAccess.Shared();
+            IReadOnlyList<IWebElement> childs = driver.FindElement(By.Id("btnSection")).FindElements(By.ClassName("viewControls"));
+            foreach (IWebElement ele in childs)
+            {
+                if (ele.Displayed)
+                {
+                    IList<IWebElement> buttons = ele.FindElements(By.TagName("button"));
+                    IWebElement Activebtn = null;
+                    foreach (IWebElement btn in buttons)
+                    {
+                        if (Common.Compare(btn.Text, "Make Active"))
+                        {
+                            Activebtn = btn;
+                        }
+                    }
+                    if (Activebtn.Enabled)
+                    {
+                        Activebtn.Click();
+                        //Wait.UntilSucessMessageShow();
+                        //Wait.WaitUntilLoadingInVisible();
+                        try
+                        {
+                            Wait.WaitUntilElementDisply(By.ClassName("effectiveDateModalPrice"));
+                            driver.FindElement(By.ClassName("effectiveDateModalPrice")).FindElement(By.Id("effectiveNow")).Click();
+                            Wait.InSeconds(1);
+                            SeleniumExtension.findButtonByText(driver.FindElement(By.ClassName("effectiveDateModalPrice")).FindElements(By.TagName("button")), "OK").Click();
+                        }
+                        catch (Exception) { }
+
+                        Wait.WaitUntilLoadingInVisible();
+                        break;
+                    }
+                    else
+                    {
+                        throw new TestCaseException("Unable to Active Product there was no changes made");
+                    }
+                }
+            }
+
         }
         #region Set Price By Object Logic
         internal static void SetPriceByObject(PriceFill PriceObj)
@@ -288,8 +345,13 @@ namespace VelocityTestCases.Utility
                 gridNameElement.SendKeys(GridInfo.PriceGridName);
             }
             //SeleniumExtension.AddTextToField(, GridInfo.PriceGridName);
-            GridParentElement.FindElement(By.ClassName("collapsed")).Click();
-            Wait.InSeconds(1);
+            try
+            {
+                GridParentElement.FindElement(By.ClassName("collapsed")).Click();
+                Wait.InSeconds(1);
+            }
+            catch (Exception) { }
+
 
             IWebElement ParentCheckboxDiv = GridParentElement.FindElement(By.ClassName(TestElements.AddProduct_PriceGrid_div_class));
             IReadOnlyList<IWebElement> childs = ParentCheckboxDiv.FindElements(By.ClassName("dataCol"));
@@ -455,7 +517,7 @@ namespace VelocityTestCases.Utility
         }
 
 
-        internal static IWebElement SearchProductInWebSite(string SearchTerm, string SupplierID="",string ProductNumber="",string ProductName="")
+        internal static IWebElement SearchProductInWebSite(string SearchTerm, string SupplierID = "", string ProductNumber = "", string ProductName = "")
         {
             IWebDriver driver = DriverAccess.Shared();
             SeleniumExtension.AddTextToField(By.Id("ctl03_ctl00_txtSearchTerms"), SearchTerm);
@@ -465,7 +527,7 @@ namespace VelocityTestCases.Utility
             do
             {
                 IReadOnlyList<IWebElement> pList = driver.FindElements(By.ClassName("prod-tile"));
-                
+
                 foreach (IWebElement ele in pList)
                 {
                     try
@@ -487,7 +549,7 @@ namespace VelocityTestCases.Utility
                 }
             } while (ProductUtility.SharedProdutNextPage());
 
-            
+
 
             return SupplyProduct;
         }
@@ -569,5 +631,45 @@ namespace VelocityTestCases.Utility
             }
             ProductUtility.SaveTabState();
         }
+
+        internal static bool ValidateActiveProcessonPriceTab()
+        {
+            IWebDriver driver = DriverAccess.Shared();
+            Wait.WaitUntilElementDisply(By.ClassName("publishSuccessModalPrice"), 10);
+            if (driver.FindElement(By.ClassName("publishSuccessModalPrice")).FindElement(By.TagName("h3")).Text == "Success!")
+            {
+                // Logger.Log("new product Add and mark it as Active - Pass");
+                SeleniumExtension.click(By.XPath(TestElements.AddProduct_SucessOk_Btn_Xapth));
+                return true;
+                //  TestCasesCommon.LogoutUser();
+            }
+            throw new NotImplementedException();
+        }
+          internal static bool ValidateActiveProcess(string model)
+        {
+            IWebDriver driver = DriverAccess.Shared();
+            Wait.WaitUntilElementDisply(By.ClassName(model), 10);
+            if (driver.FindElement(By.ClassName(model)).FindElement(By.TagName("h3")).Text == "Success!")
+            {
+                // Logger.Log("new product Add and mark it as Active - Pass");
+
+                driver.FindElement(By.ClassName(model)).FindElement(By.ClassName("btn-default")).Click();
+              //  SeleniumExtension.click(By.XPath(TestElements.AddProduct_SucessOk_Btn_Xapth));
+                return true;
+                //  TestCasesCommon.LogoutUser();
+            }
+            throw new NotImplementedException();
+        }
+
+
+
+          internal static void ActiveProductModal(string p)
+          {
+              IWebDriver driver = DriverAccess.Shared();
+              Wait.WaitUntilElementDisply(By.ClassName(p));
+              driver.FindElement(By.ClassName(p)).FindElement(By.Id("effectiveNow")).Click();
+              Wait.InSeconds(1);
+              SeleniumExtension.findButtonByText(driver.FindElement(By.ClassName(p)).FindElements(By.TagName("button")), "OK").Click();
+          }
     }
 }

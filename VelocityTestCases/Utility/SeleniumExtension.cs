@@ -330,5 +330,22 @@ namespace VelocityTestCases.Utility
                 Wait.InSeconds(1);
             }
         }
+
+        internal static void TryToClick(By by)
+        {
+            IWebDriver driver = DriverAccess.Shared();
+            try
+            {
+                driver.FindElement(by).Click();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        internal static IWebElement findButtonByText(ReadOnlyCollection<IWebElement> readOnlyCollection, string p)
+        {
+            return readOnlyCollection.First(e => e.Text == p);
+        }
     }
 }

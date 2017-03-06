@@ -74,21 +74,11 @@ namespace VelocityTestCases
                 PriceObjectSPG price = new PriceObjectSPG();
                 ProductUtility.SetPriceByObject(price.ProductPrice);
                 ProductUtility.MakeActive();
-                //SeleniumExtension.ClickViaJavaScript(By.CssSelector(TestElements.AddProduct_MakeActive_btn_atribute));
-                Wait.WaitUntilElementDisply(By.ClassName("publishSuccessModalPrice"), 10);
-                Wait.InSeconds(2);
-                if (driver.FindElement(By.ClassName("publishSuccessModalPrice")).FindElement(By.TagName("h3")).Text == "Success!")
+                if (ProductUtility.ValidateActiveProcessonPriceTab())
                 {
                     Logger.Log("new product Add and mark it as Active - Pass", LogStatus.Pass, test);
-                    SeleniumExtension.click(By.XPath(TestElements.AddProduct_SucessOk_Btn_Xapth));
-                    //  UserUtility.LogoutVelocity();\\
-                    Info.Added_Active_Product_Id_SPG = ProductID == "" ? Info.Added_Active_Product_Id_SPG : ProductID;
+                    Info.Added_Active_Product_Id_SPG = ProductID;
                 }
-                else
-                {
-                    Logger.Log("new product Add and mark it as Active - Fail");
-                }
-
             }
             catch (Exception ex)
             {
@@ -225,19 +215,9 @@ namespace VelocityTestCases
                 PriceObjectMPG price = new PriceObjectMPG();
                 ProductUtility.SetPriceByObject(price.ProductPrice);
                 ProductUtility.MakeActive();
-                Wait.WaitUntilElementDisply(By.ClassName("publishSuccessModalPrice"), 10);
-                Wait.InSeconds(2);
-                if (driver.FindElement(By.ClassName("publishSuccessModalPrice")).FindElement(By.TagName("h3")).Text == "Success!")
+                if (ProductUtility.ValidateActiveProcessonPriceTab())
                 {
-                    Logger.Log("new product Add and mark it as Active - Pass", LogStatus.Pass, test);
-                    SeleniumExtension.click(By.XPath(TestElements.AddProduct_SucessOk_Btn_Xapth));
-                    //  TestCasesCommon.LogoutUser();
-                    Info.Added_Active_Product_Id_MPG = ProductID == "" ? Info.Added_Active_Product_Id_MPG : ProductID;
-
-                }
-                else
-                {
-                    Logger.Log("new product Add and mark it as Active - Fail");
+                    Logger.Log("new product Add and mark it as Active - Pass", LogStatus.Pass, test);                
                 }
 
             }
@@ -265,16 +245,12 @@ namespace VelocityTestCases
                 SeleniumExtension.ScrolElementToDisplay(0, 0);
                 ProductUtility.DeleteImageForProduct();
                 ProductUtility.SaveTabState();
+                State.TabSwitchByName(NewProductTabItems.Pricing);
                 ProductUtility.MakeActive();
-                Wait.UntilModalisVisible(By.ClassName("validatingModalImages"));
-                Wait.InSeconds(2);
-                if (driver.FindElement(By.ClassName("publishSuccessModalPrice")).FindElement(By.TagName("h3")).Text == "Success!")
+                if (ProductUtility.ValidateActiveProcessonPriceTab())
                 {
-                    // Logger.Log("new product Add and mark it as Active - Pass");
-                    SeleniumExtension.click(By.XPath(TestElements.AddProduct_SucessOk_Btn_Xapth));
-                    //  TestCasesCommon.LogoutUser();
+                    Logger.Log("Delete Image for product- Pass", LogStatus.Pass, test);
                 }
-                Logger.Log("Delete Image for product- Pass", LogStatus.Pass, test);
 
             }
             catch (Exception ex)
@@ -295,6 +271,11 @@ namespace VelocityTestCases
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SearchProductByName("\"" + Info.Product_Name_ActiveProductToInactive + "\"");
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(true), "Make Inactive");//TestCasesCommon.InActiveProductInSearchResult();
+                Wait.WaitUntilLoadingInVisible();
+                Wait.WaitUntilElementDisply(By.Id("unpublishProductModal"));
+                driver.FindElement(By.Id("unpublishProductModal")).FindElement(By.Id("unpublishNow")).Click();
+                Wait.InSeconds(1);
+                driver.FindElement(By.Id("unpublishProductModal")).FindElement(By.ClassName("btn-primary")).Click();
                 Wait.WaitUntilLoadingInVisible();
                 Logger.Log("In Active product- Pass", LogStatus.Pass, test);
 
@@ -322,29 +303,11 @@ namespace VelocityTestCases
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(true), "Edit");
                 Wait.WaitUntilLoadingInVisible(By.ClassName(CommonElements.loadingBackDrop_div_Class));
                 ProductUtility.EditBasicInfo(Info.NewProduct_Update_Summary + Config.TestIterationName_number, Info.NewProduct_Update_Keywords);
+                State.TabSwitchByName(NewProductTabItems.Pricing);               
                 ProductUtility.MakeActive();
-                Wait.UntilModalisVisible(By.ClassName("validatingModalBasic"));
-                Wait.InSeconds(4);
-                Wait.WaitUntilElementDisply(By.ClassName("publishSuccessModalBasic"));
-                if (driver.FindElement(By.ClassName("publishSuccessModalBasic")).FindElement(By.TagName("h3")).Text == "Success!")
+                if (ProductUtility.ValidateActiveProcessonPriceTab())
                 {
                     Logger.Log("Update Active product information - Pass", LogStatus.Pass, test);
-
-                    try
-                    {
-                        driver.FindElement(By.ClassName("publishSuccessModalBasic")).FindElements(By.TagName("button"))[1].Click();
-                        Wait.WaitUntilLoadingInVisible();
-
-                    }
-                    catch (Exception)
-                    {
-
-                    }
-                    //  TestCasesCommon.LogoutUser();
-                }
-                else
-                {
-                    throw new Exception("Update Active product information - Fail");
                 }
 
             }
@@ -384,11 +347,13 @@ namespace VelocityTestCases
                 }
                 ProductSearchUtility.SearchProductByName("\"" + Info.Active_Product_NewName_ForCopy + Config.TestIterationName_number + "\"");
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(false), "Make Active");
-                Wait.WaitUntilElementDisply(By.ClassName("publishSuccessModalDash"));
-                SeleniumExtension.click(By.CssSelector("button[data-bind='click: prodValidationHelper.closeProduct']"));
 
-                Logger.Log("Copy product with new name.- Pass", LogStatus.Pass, test);
+                ProductUtility.ActiveProductModal("effectiveDateModalDash");
 
+                if (ProductUtility.ValidateActiveProcess("publishSuccessModalDash"))
+                {
+                    Logger.Log("Copy product with new name.- Pass", LogStatus.Pass, test);
+                }
             }
             catch (Exception ex)
             {
@@ -451,8 +416,13 @@ namespace VelocityTestCases
                     }
                     else
                     {
-                        Wait.WaitUntilElementDisply(By.XPath(TestElements.BulkActive_OkBtn_Xpath));
-                        SeleniumExtension.click(By.XPath(TestElements.BulkActive_OkBtn_Xpath));
+                        Wait.WaitUntilElementDisply(By.Id("bulkPublishModal"));
+                        driver.FindElement(By.Id("bulkPublishModal")).FindElement(By.Id("effectiveNow")).Click();
+                        Wait.InSeconds(1);
+                        driver.FindElement(By.Id("bulkPublishModal")).FindElement(By.ClassName("btn-primary")).Click();
+                        Wait.WaitUntilElementDisply(By.Id("sayModalSuccessForm"));
+                        driver.FindElement(By.Id("sayModalSuccessForm")).FindElement(By.ClassName("btn-primary")).Click();
+                        Wait.InSeconds(1);
                     }
                     Wait.InSeconds(1);
                 }
@@ -639,7 +609,7 @@ namespace VelocityTestCases
                 State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 ProductSearchUtility.SearchProductByName("\"" + Info.Product_Name_ActiveProduct + "\"");
-                this.InActiveProduct();
+                //this.InActiveProduct();
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(false), "Delete");
                 Wait.InSeconds(1);
                 Wait.WaitUntilElementDisply(By.LinkText("Yes, Delete this Product"));
@@ -1333,18 +1303,10 @@ namespace VelocityTestCases
                 ProductUtility.SetPriceByObject(price.ProductPrice);
                 ProductUtility.MakeActive();
                 //SeleniumExtension.ClickViaJavaScript(By.CssSelector(TestElements.AddProduct_MakeActive_btn_atribute));
-                Wait.WaitUntilElementDisply(By.ClassName("publishSuccessModalPrice"), 10);
-                Wait.InSeconds(2);
-                if (driver.FindElement(By.ClassName("publishSuccessModalPrice")).FindElement(By.TagName("h3")).Text == "Success!")
+
+                if (ProductUtility.ValidateActiveProcessonPriceTab())
                 {
                     Logger.Log("new product Add and mark it as Active - Pass", LogStatus.Pass, test);
-                    SeleniumExtension.click(By.XPath(TestElements.AddProduct_SucessOk_Btn_Xapth));
-                    //  UserUtility.LogoutVelocity();\\
-                    //  Info.Added_Active_Product_Id_SPG = ProductID == "" ? Info.Added_Active_Product_Id_SPG : ProductID;
-                }
-                else
-                {
-                    Logger.Log("new product Add and mark it as Active - Fail");
                 }
             }
             catch (Exception ex)
@@ -1451,19 +1413,11 @@ namespace VelocityTestCases
                 ProductUtility.SetPriceByObject(price.ProductPrice);
                 ProductUtility.MakeActive();
                 //SeleniumExtension.ClickViaJavaScript(By.CssSelector(TestElements.AddProduct_MakeActive_btn_atribute));
-                Wait.WaitUntilElementDisply(By.ClassName("publishSuccessModalPrice"), 10);
-                Wait.InSeconds(2);
-                if (driver.FindElement(By.ClassName("publishSuccessModalPrice")).FindElement(By.TagName("h3")).Text == "Success!")
+                if (ProductUtility.ValidateActiveProcessonPriceTab())
                 {
                     Logger.Log("new product Add and mark it as Active - Pass", LogStatus.Pass, test);
-                    SeleniumExtension.click(By.XPath(TestElements.AddProduct_SucessOk_Btn_Xapth));
-                    //  UserUtility.LogoutVelocity();\\
-                    //  Info.Added_Active_Product_Id_SPG = ProductID == "" ? Info.Added_Active_Product_Id_SPG : ProductID;
                 }
-                else
-                {
-                    Logger.Log("new product Add and mark it as Active - Fail");
-                }
+                
             }
             catch (Exception ex)
             {
@@ -1565,20 +1519,12 @@ namespace VelocityTestCases
 
                     ProductUtility.EditBasicInfo(Info.NewProduct_Update_Summary + Config.TestIterationName_number, Info.NewProduct_Update_Keywords);
                     //ProductUtility.SaveTabState();
+                    State.TabSwitchByName(NewProductTabItems.Pricing);     
                     ProductUtility.MakeActive();
-                    Wait.WaitUntilElementDisply(By.ClassName("publishSuccessModalBasic"), 10);
-                    Wait.InSeconds(2);
-                    if (driver.FindElement(By.ClassName("publishSuccessModalBasic")).FindElement(By.TagName("h3")).Text == "Success!")
+                    if (ProductUtility.ValidateActiveProcessonPriceTab())
                     {
                         Logger.Log("new product Add and mark it as Active - Pass", LogStatus.Pass, test);
-                        SeleniumExtension.click(By.XPath("//*[@id=\"product-info-view\"]/div[12]/div[3]/button"));
-                        //  UserUtility.LogoutVelocity();\\
-                        //  Info.Added_Active_Product_Id_SPG = ProductID == "" ? Info.Added_Active_Product_Id_SPG : ProductID;
-                    }
-                    else
-                    {
 
-                        Logger.Log("Copy Supplier Product Update AndA ctive It - Fail");
                     }
                 }
             }
@@ -1689,42 +1635,20 @@ namespace VelocityTestCases
                 PriceObjectSPG price = new PriceObjectSPG();
                 ProductUtility.SetPriceByObject(price.ProductPrice);
                 ProductUtility.MakeActive();
-                //SeleniumExtension.ClickViaJavaScript(By.CssSelector(TestElements.AddProduct_MakeActive_btn_atribute));
-                Wait.WaitUntilElementDisply(By.ClassName("publishSuccessModalPrice"), 10);
-                Wait.InSeconds(2);
-                if (driver.FindElement(By.ClassName("publishSuccessModalPrice")).FindElement(By.TagName("h3")).Text == "Success!")
+                if (ProductUtility.ValidateActiveProcessonPriceTab())
                 {
                     Logger.Log("new product Add and mark it as Active - Pass", LogStatus.Pass, test);
-                    SeleniumExtension.click(By.XPath(TestElements.AddProduct_SucessOk_Btn_Xapth));
                     State.GotoSupplierHome();
                     State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                     ProductSearchUtility.SearchProductByName("\"" + Info.Dist_ShareProductName + "\"");
                     ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(true), "Edit");
                     Wait.WaitUntilLoadingInVisible(By.ClassName(CommonElements.loadingBackDrop_div_Class));
                     ProductUtility.EditBasicInfo(Info.NewProduct_Update_Summary + Config.TestIterationName_number, Info.NewProduct_Update_Keywords);
+                    State.TabSwitchByName(NewProductTabItems.Pricing);     
                     ProductUtility.MakeActive();
-                    Wait.UntilModalisVisible(By.ClassName("validatingModalBasic"));
-                    Wait.InSeconds(4);
-                    Wait.WaitUntilElementDisply(By.ClassName("publishSuccessModalBasic"));
-                    if (driver.FindElement(By.ClassName("publishSuccessModalBasic")).FindElement(By.TagName("h3")).Text == "Success!")
+                    if (ProductUtility.ValidateActiveProcessonPriceTab())
                     {
                         Logger.Log("Update Active product information - Pass", LogStatus.Pass, test);
-
-                        try
-                        {
-                            driver.FindElement(By.ClassName("publishSuccessModalBasic")).FindElements(By.TagName("button"))[1].Click();
-                            Wait.WaitUntilLoadingInVisible();
-
-                        }
-                        catch (Exception)
-                        {
-
-                        }
-
-                    }
-                    else
-                    {
-                        Logger.Log("new product Add and mark it as Active - Fail");
                     }
                 }
             }
