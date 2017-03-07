@@ -588,7 +588,7 @@ namespace VelocityTestCases.Utility
             //  SeleniumExtension.clickIfClickable(By.XPath("//*[@id=\"modalDeleteAllKeywords\"]/div[3]/a[2]"));
             SeleniumExtension.click(By.XPath(TestElements.AddProduct_Catagory_btn_Xpath));
             Wait.InSeconds(1);
-            SeleniumExtension.click(By.CssSelector(TestElements.AddProduct_CatogoriesAll_Btn_Attribute));
+            SeleniumExtension.TryToClick(By.CssSelector(TestElements.AddProduct_CatogoriesAll_Btn_Attribute));
             Wait.InSeconds(1);
 
             foreach (string Item in cat)
