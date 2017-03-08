@@ -1,5 +1,5 @@
 ﻿{
-    run: "production",
+    run: "staging",
     staging: {
         URL_VelocityBase: "http://stage-espupdates.asicentral.com",
         ApiBasePath: "https://stage-productservice.asicentral.com",
