@@ -40,6 +40,7 @@ namespace VelocityTestCases.Utility
                 Wait.WaitUntilElementClickAble(By.LinkText("Manage Products"));
                 SeleniumExtension.click(By.LinkText("Manage Products"));
                 Wait.WaitUntilElementPopup(By.Id("supplierSearchTextBox"));
+                Wait.WaitUntilElementDisply(By.Id("txtPageNumber"));
                 Wait.InSeconds(1);
             }
 
@@ -229,6 +230,17 @@ namespace VelocityTestCases.Utility
 
             }
         }
+        
+        internal static void RemoveDialogsbuldPublish()
+        {
+            IWebDriver driver = DriverAccess.Shared();
+            if (SeleniumExtension.ElementDisplay(By.Id("bulkPublishModal")))
+            {
+                driver.FindElement(By.Id("bulkPublishModal")).FindElement(By.LinkText("Cancel")).Click();
+                Wait.InSeconds(2);
+            }
+        }
+        
 
         internal static void GotoSupplierHomeByID(string Id)
         {
@@ -288,9 +300,9 @@ namespace VelocityTestCases.Utility
 
             if (application == Application.EspWebSites)
             {
-                SeleniumExtension.click(By.LinkText("My Applications"));
+                SeleniumExtension._click(By.LinkText("My Applications"));
                 Wait.InSeconds(1);
-                SeleniumExtension.click(By.LinkText("ESP Websites Admin"));
+                SeleniumExtension._click(By.LinkText("ESP Websites Admin"));
                 Wait.InSeconds(3);
                 if (State.IsLogout()) {
                     UserUtility.LoginToVelocity(UserUtility.LogedInUser);
@@ -306,9 +318,9 @@ namespace VelocityTestCases.Utility
 
                 try
                 {
-                    SeleniumExtension.click(By.LinkText("My Applications"));
+                    SeleniumExtension._click(By.LinkText("My Applications"));
                     Wait.InSeconds(1);
-                    SeleniumExtension.click(By.LinkText("ESP Updates"));
+                    SeleniumExtension._click(By.LinkText("ESP Updates"));
                     Wait.WaitUntilElementDisply(By.Id("supplierSearchTextBox"), 15);
                 }
                 catch (Exception)
@@ -320,7 +332,7 @@ namespace VelocityTestCases.Utility
                         var App = ButtonsList.First(e => e.FindElement(By.TagName("span")).Text == "My Applications");
                         App.Click();
                         Wait.InSeconds(1);
-                        SeleniumExtension.click(By.LinkText("ESP Updates"));
+                        SeleniumExtension._click(By.LinkText("ESP Updates"));
                         Wait.WaitUntilElementDisply(By.Id("supplierSearchTextBox"), 15);
                     }
                     catch (Exception)

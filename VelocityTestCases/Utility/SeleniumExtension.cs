@@ -36,6 +36,7 @@ namespace VelocityTestCases.Utility
         public static void click(By element)
         {
             IWebDriver driver = DriverAccess.Shared();
+            Wait.WaitUntilElementClickAble(element);
             driver.FindElement(element).Click();
             Wait.InSeconds(1);
         }
@@ -346,6 +347,14 @@ namespace VelocityTestCases.Utility
         internal static IWebElement findButtonByText(ReadOnlyCollection<IWebElement> readOnlyCollection, string p)
         {
             return readOnlyCollection.First(e => e.Text == p);
+        }
+
+        internal static void _click(By element)
+        {
+            IWebDriver driver = DriverAccess.Shared();
+            //Wait.WaitUntilElementClickAble(element);
+            driver.FindElement(element).Click();
+            Wait.InSeconds(1);
         }
     }
 }

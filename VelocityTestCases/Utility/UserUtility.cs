@@ -183,11 +183,13 @@ namespace VelocityTestCases.Utility
         {
             IWebDriver driver = DriverAccess.Shared();
             Wait.WaitUntilElementPopup(By.Id(CommonElements.SupplierSearch_Field_Id));
+            Wait.InSeconds(2);
             SeleniumExtension.AddTextToField(By.Id(CommonElements.SupplierSearch_Field_Id), SId);
             SeleniumExtension.click(By.XPath(CommonElements.SupplierSearch_btn_Xpath));
             Wait.InSeconds(1);
             Wait.WaitUntilLoadingInVisible();
-            Wait.InSeconds(1);
+            Wait.InSeconds(2);
+            Wait.WaitUntilElementDisply(By.XPath(CommonElements.SupplierResultContainer_Div_Xpath));
             IWebElement ParentDiv = driver.FindElement(By.XPath(CommonElements.SupplierResultContainer_Div_Xpath));
             IReadOnlyList<IWebElement> childs = ParentDiv.FindElements(By.ClassName("well-small"));
             IWebElement Suppliertab = null;

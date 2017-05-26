@@ -220,10 +220,10 @@ namespace VelocityTestCases.Utility
                         //Wait.WaitUntilLoadingInVisible();
                         try
                         {
-                            Wait.WaitUntilElementDisply(By.ClassName("effectiveDateModalPrice"));
-                            driver.FindElement(By.ClassName("effectiveDateModalPrice")).FindElement(By.Id("effectiveNow")).Click();
-                            Wait.InSeconds(1);
-                            SeleniumExtension.findButtonByText(driver.FindElement(By.ClassName("effectiveDateModalPrice")).FindElements(By.TagName("button")), "OK").Click();
+                            //Wait.WaitUntilElementDisply(By.ClassName("publishSuccessModalPrice"));
+                            //driver.FindElement(By.ClassName("publishSuccessModalPrice")).FindElement(By.Id("effectiveNow")).Click();
+                            //Wait.InSeconds(1);
+                            //SeleniumExtension.findButtonByText(driver.FindElement(By.ClassName("effectiveDateModalPrice")).FindElements(By.TagName("button")), "OK").Click();
                         }
                         catch (Exception) { }
 

@@ -141,7 +141,7 @@ namespace VelocityTestCases
                 throw;
             }
         }
-       // [Test, Order(4)]
+        // [Test, Order(4)]
         public void RestrictedKeyWordsSubmitAndReviewAndMakeActive()
         {
             //IWebDriver driver =DriverAccess.Shared();
@@ -217,7 +217,7 @@ namespace VelocityTestCases
                 ProductUtility.MakeActive();
                 if (ProductUtility.ValidateActiveProcessonPriceTab())
                 {
-                    Logger.Log("new product Add and mark it as Active - Pass", LogStatus.Pass, test);                
+                    Logger.Log("new product Add and mark it as Active - Pass", LogStatus.Pass, test);
                 }
 
             }
@@ -269,12 +269,12 @@ namespace VelocityTestCases
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
-                ProductSearchUtility.SearchProductByName("\"" + Info.Product_Name_ActiveProductToInactive + "\"");
+                //ProductSearchUtility.SearchProductByName("\"" + Info.Product_Name_ActiveProductToInactive + "\"");
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(true), "Make Inactive");//TestCasesCommon.InActiveProductInSearchResult();
                 Wait.WaitUntilLoadingInVisible();
                 Wait.WaitUntilElementDisply(By.Id("unpublishProductModal"));
                 driver.FindElement(By.Id("unpublishProductModal")).FindElement(By.Id("unpublishNow")).Click();
-                Wait.InSeconds(1);
+                Wait.InSeconds(2);
                 driver.FindElement(By.Id("unpublishProductModal")).FindElement(By.ClassName("btn-primary")).Click();
                 Wait.WaitUntilLoadingInVisible();
                 Logger.Log("In Active product- Pass", LogStatus.Pass, test);
@@ -299,11 +299,12 @@ namespace VelocityTestCases
                 IWebDriver driver = DriverAccess.Shared();
                 State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
+                ProductSearchUtility.ClearAllFilters();
                 ProductSearchUtility.SearchProductByName("\"" + Info.Active_Product_Name_ForUpdate + "\"");
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(true), "Edit");
                 Wait.WaitUntilLoadingInVisible(By.ClassName(CommonElements.loadingBackDrop_div_Class));
                 ProductUtility.EditBasicInfo(Info.NewProduct_Update_Summary + Config.TestIterationName_number, Info.NewProduct_Update_Keywords);
-                State.TabSwitchByName(NewProductTabItems.Pricing);               
+                State.TabSwitchByName(NewProductTabItems.Pricing);
                 ProductUtility.MakeActive();
                 if (ProductUtility.ValidateActiveProcessonPriceTab())
                 {
@@ -329,32 +330,42 @@ namespace VelocityTestCases
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
-                ProductSearchUtility.SearchProductByName("\"" + Info.Active_Product_Name_ForCopy + "\"");
+
+                //ProductSearchUtility.SearchProductByName("\"" + Info.Active_Product_Name_ForCopy + "\"");
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(true), "Copy");
                 Wait.InSeconds(2);
                 SeleniumExtension.AddTextToField(By.Id("copyProdName"), Info.Active_Product_NewName_ForCopy + Config.TestIterationName_number);
                 SeleniumExtension.click(By.XPath("//*[@id=\"copyProductModal\"]/div[1]"));
                 SeleniumExtension.click(By.XPath("//*[@id=\"copyProductModal\"]/div[4]/button"));
-                //Wait.WaitUntilElementDisply(By.Id("sayModalSuccessForm"));
-                //if (Common.Compare(driver.FindElement(By.Id("sayModalSuccessForm")).FindElement(By.TagName("h4")).Text, "Success"))
-                //{
-                //    SeleniumExtension.click(By.XPath("//*[@id=\"sayModalSuccessForm\"]/div[3]/button"));
-                //    Wait.InSeconds(1);
-                //}
-                //else
-                //{
-                //    throw new Exception("copy product process fail");
-                //}
+                Wait.WaitUntilElementDisply(By.Id("sayModalSuccessForm"));
+                if (Common.Compare(driver.FindElement(By.Id("sayModalSuccessForm")).FindElement(By.TagName("h4")).Text, "Success"))
+                {
+                    SeleniumExtension.click(By.XPath("//*[@id=\"sayModalSuccessForm\"]/div[3]/button"));
+                    Wait.InSeconds(1);
+                }
+                else
+                {
+                    throw new Exception("copy product process fail");
+                }
                 Wait.InSeconds(5);
                 ProductSearchUtility.SearchProductByName("\"" + Info.Active_Product_NewName_ForCopy + Config.TestIterationName_number + "\"");
                 ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(false), "Make Active");
 
-                ProductUtility.ActiveProductModal("effectiveDateModalDash");
-
-                if (ProductUtility.ValidateActiveProcess("publishSuccessModalDash"))
+                // ProductUtility.ActiveProductModal("effectiveDateModalDash");
+                Wait.InSeconds(2);
+                Wait.WaitUntilLoadingInVisible();
+                // Wait.(By.ClassName("publishSuccessModalDash"));
+                if (SeleniumExtension.ElementDisplay(By.ClassName("publishSuccessModalDash")))
                 {
+                    SeleniumExtension.click(By.CssSelector("button[data-bind='click: prodValidationHelper.closeProduct']"));
                     Logger.Log("Copy product with new name.- Pass", LogStatus.Pass, test);
                 }
+                else
+                {
+                    throw new Exception("Copy product fail");
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -404,8 +415,9 @@ namespace VelocityTestCases
                     SeleniumExtension.click(By.LinkText("Make Active"));
                     driver.FindElement(By.Id("bulkEditOptionsModal")).FindElement(By.LinkText("Bulk Edit")).Click();
                     ProductSearchUtility.AcceptApiEditOverRide();
-                    SeleniumExtension.click(By.XPath(TestElements.BulkActive_Btn_Xpath));
-                    Wait.InSeconds(2);
+
+                   // SeleniumExtension.click(By.XPath(TestElements.BulkActive_Btn_Xpath));
+                   // Wait.InSeconds(2);
                     if (SeleniumExtension.CheckIfAlertPresent())
                     {
                         driver.SwitchTo().Alert().Accept();
@@ -421,9 +433,23 @@ namespace VelocityTestCases
                         driver.FindElement(By.Id("bulkPublishModal")).FindElement(By.Id("effectiveNow")).Click();
                         Wait.InSeconds(1);
                         driver.FindElement(By.Id("bulkPublishModal")).FindElement(By.ClassName("btn-primary")).Click();
-                        Wait.WaitUntilElementDisply(By.Id("sayModalSuccessForm"));
-                        driver.FindElement(By.Id("sayModalSuccessForm")).FindElement(By.ClassName("btn-primary")).Click();
-                        Wait.InSeconds(1);
+                        Wait.InSeconds(2);
+                        if (SeleniumExtension.CheckIfAlertPresent())
+                        {
+                            driver.SwitchTo().Alert().Accept();
+                            // SeleniumExtension.click(By.LinkText("Make Active"));
+                            Wait.InSeconds(1);
+                            SeleniumExtension.click(By.XPath("//*[@id=\"bulkPublishModal\"]/div[3]/a"));
+                            Wait.InSeconds(2);
+                            // ProductSearchUtility.TryToSelectMultipleProducts(4);
+                        }
+                        else
+                        {
+                            Wait.WaitUntilElementDisply(By.Id("sayModalSuccessForm"));
+                            driver.FindElement(By.Id("sayModalSuccessForm")).FindElement(By.ClassName("btn-primary")).Click();
+                            Wait.InSeconds(1);
+                        }
+
                     }
                     Wait.InSeconds(1);
                 }
@@ -917,7 +943,7 @@ namespace VelocityTestCases
         #endregion
 
         #region Api Testing Section
-        [Test, Order(30)]
+        //[Test, Order(30)]
         public void API2_GetProductById()
         {
             try
@@ -944,7 +970,7 @@ namespace VelocityTestCases
                 throw;
             }
         }
-        [Test, Order(31)]
+        //[Test, Order(31)]
         public void API2_PostProductAfterChange()
         {
             try
@@ -963,7 +989,7 @@ namespace VelocityTestCases
                 throw;
             }
         }
-        [Test, Order(32)]
+        //[Test, Order(32)]
         public void API3_GetProductById()
         {
             try
@@ -988,7 +1014,7 @@ namespace VelocityTestCases
                 throw;
             }
         }
-        [Test, Order(33)]
+        //  [Test, Order(33)]
         public void API3_PostProductAfterChange()
         {
             try
@@ -1008,7 +1034,7 @@ namespace VelocityTestCases
                 throw;
             }
         }
-        [Test, Order(34)]
+        //[Test, Order(34)]
         public void API3_InActiveProduct()
         {
             try
@@ -1027,7 +1053,7 @@ namespace VelocityTestCases
                 throw;
             }
         }
-        [Test, Order(35)]
+        //[Test, Order(35)]
         public void API3_DeleteProduct()
         {
             try
@@ -1054,7 +1080,7 @@ namespace VelocityTestCases
             {
                 this.AddProductWithSPG();
                 test = extent.StartTest("API3NET_GetProductById");
-                
+
                 string productId = Info.Added_Active_Product_Id_SPG;
                 UserUtility.LoginToAPI(Credentials.APIV3Net_User);
                 ProductObject po = ApiOperations.GetProductByID(productId, Credentials.APIV3Net_User);
@@ -1264,7 +1290,7 @@ namespace VelocityTestCases
             try
             {
                 test = extent.StartTest("Esp_CheckWebSitesLogo");
-              //  Wait.InSeconds(5);
+                //  Wait.InSeconds(5);
                 //UserUtility.LogoutVelocity();
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 State.GotoSupplierHomeByID(Credentials.distributer_AsiNumber);
@@ -1359,7 +1385,7 @@ namespace VelocityTestCases
                 IWebElement CollectionRow = driver.FindElement(By.CssSelector("table[role='grid']")).FindElements(By.TagName("tr"))[1];
                 CollectionRow.FindElement(By.LinkText("Search")).Click();
                 Wait.WaitUntilElementDisply(By.Id("topBreadcrumbs"));
-                IWebElement NewAddedProduct = ProductUtility.SearchProductInWebSite(Info.Dist_PrivateProductName, Credentials.distributer_AsiNumber, Info.Dist_PrivateProductNumber, Info.Dist_PrivateProductName);
+                IWebElement NewAddedProduct = ProductUtility.SearchProductInWebSite("\"" + Info.Dist_PrivateProductName + "\"", Credentials.distributer_AsiNumber, Info.Dist_PrivateProductNumber, Info.Dist_PrivateProductName);
                 if (NewAddedProduct != null)
                 {
                     throw new Exception("Private Product is Visible in Esp Websites");
@@ -1418,7 +1444,7 @@ namespace VelocityTestCases
                 {
                     Logger.Log("new product Add and mark it as Active - Pass", LogStatus.Pass, test);
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -1439,7 +1465,7 @@ namespace VelocityTestCases
                 State.GotoSupplierHomeByID(Credentials.distributer_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
                 State.SwitchApplication(Application.EspWebSites);
-                IList<IWebElement> WebSiteList = driver.FindElement(By.Id( "siteList")).FindElements(By.ClassName("list-item"));
+                IList<IWebElement> WebSiteList = driver.FindElement(By.Id("siteList")).FindElements(By.ClassName("list-item"));
                 IWebElement webSite = null;
                 foreach (var item in WebSiteList)
                 {
@@ -1452,7 +1478,8 @@ namespace VelocityTestCases
                             break;
                         }
                     }
-                    if (webSite != null) {
+                    if (webSite != null)
+                    {
                         break;
                     }
                 }
@@ -1470,7 +1497,7 @@ namespace VelocityTestCases
                 IWebElement CollectionRow = driver.FindElement(By.CssSelector("table[role='grid']")).FindElements(By.TagName("tr"))[1];
                 CollectionRow.FindElement(By.LinkText("Search")).Click();
                 Wait.WaitUntilElementDisply(By.Id("topBreadcrumbs"));
-                IWebElement NewAddedProduct = ProductUtility.SearchProductInWebSite("\""+Info.Dist_SharedProductNumber+"\"", Credentials.distributer_AsiNumber, Info.Dist_SharedProductNumber, Info.Dist_ShareProductName);
+                IWebElement NewAddedProduct = ProductUtility.SearchProductInWebSite("\"" + Info.Dist_SharedProductNumber + "\"", Credentials.distributer_AsiNumber, Info.Dist_SharedProductNumber, Info.Dist_ShareProductName);
                 if (NewAddedProduct == null)
                 {
                     throw new Exception(string.Format("Unable to Find New Added Product(Id:{0}) in website After {1} Mins", Info.Dist_SharedProductNumber, WaitTimeForVerification));
@@ -1495,7 +1522,7 @@ namespace VelocityTestCases
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 State.GotoSupplierHomeByID(Credentials.distributer_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
-               // State.SwitchApplication(Application.EspWebSites);
+                // State.SwitchApplication(Application.EspWebSites);
                 SeleniumExtension.click(By.XPath("//*[@id=\"dashboard-view\"]/div[2]/div[2]/div/div[2]/button[2]"));
                 Wait.WaitUntilElementDisply(By.Id("Summary"));
                 // Wait.WaitUntilElementDisply(By.LinkText("Manage Product Collections"));
@@ -1520,7 +1547,7 @@ namespace VelocityTestCases
 
                     ProductUtility.EditBasicInfo(Info.NewProduct_Update_Summary + Config.TestIterationName_number, Info.NewProduct_Update_Keywords);
                     //ProductUtility.SaveTabState();
-                    State.TabSwitchByName(NewProductTabItems.Pricing);     
+                    State.TabSwitchByName(NewProductTabItems.Pricing);
                     ProductUtility.MakeActive();
                     if (ProductUtility.ValidateActiveProcessonPriceTab())
                     {
@@ -1645,7 +1672,7 @@ namespace VelocityTestCases
                     ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(true), "Edit");
                     Wait.WaitUntilLoadingInVisible(By.ClassName(CommonElements.loadingBackDrop_div_Class));
                     ProductUtility.EditBasicInfo(Info.NewProduct_Update_Summary + Config.TestIterationName_number, Info.NewProduct_Update_Keywords);
-                    State.TabSwitchByName(NewProductTabItems.Pricing);     
+                    State.TabSwitchByName(NewProductTabItems.Pricing);
                     ProductUtility.MakeActive();
                     if (ProductUtility.ValidateActiveProcessonPriceTab())
                     {
@@ -1718,7 +1745,16 @@ namespace VelocityTestCases
                 Wait.WaitUntilLoadingInVisible();
                 Wait.InSeconds(1);
                 SeleniumExtension.AcceptIfAlertPresent();
-                State.RemoveDialogsFromPreviousTests();
+
+                try
+                {
+                    State.RemoveDialogsFromPreviousTests();
+
+                }
+                catch (Exception)
+                {
+                }
+                State.RemoveDialogsbuldPublish();
                 Wait.WaitUntilLoadingInVisible();
 
             }
@@ -1740,9 +1776,9 @@ namespace VelocityTestCases
 
                 IWebDriver driver = DriverAccess.Shared();
                 Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-                string Path = Config.DefaultProjectPath + @"Report\" + test.GetTest().Name+".png";
+                string Path = Config.DefaultProjectPath + @"Report\" + test.GetTest().Name + ".png";
                 ss.SaveAsFile(Path, System.Drawing.Imaging.ImageFormat.Png);
-                return Path ;
+                return Path;
             }
             catch (Exception ex)
             {
