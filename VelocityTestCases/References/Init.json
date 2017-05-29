@@ -1,5 +1,5 @@
 ﻿{
-    run: "staging",
+    run: "uat",
     staging: {
         URL_VelocityBase: "http://stage-espupdates.asicentral.com",
         ApiBasePath: "https://stage-productservice.asicentral.com",
@@ -49,13 +49,13 @@
         VelocityUser: [
             {
                 UserName: "as101574",
-                Password: "Adnan1234w",
+                Password: "Adnan1234",
                 ASINumber: "101574",
                 Type: "Eit"
             },
             {
                 UserName: "ads30232",
-                Password: "Adnan1234w",
+                Password: "Adnan1234",
                 ASINumber: "30232",
                 Type: "External"
             }
@@ -63,19 +63,19 @@
         APIUser: [
             {
                 UserName: "ads30232",
-                Password: "Adnan1234w",
+                Password: "Adnan1234",
                 ASINumber: "30232",
                 version: "JavaV2"
             },
             {
                 UserName: "ads30232",
-                Password: "Adnan1234w",
+                Password: "Adnan1234",
                 ASINumber: "30232",
                 version: "JavaV3"
             },
             {
                 UserName: "ads30232",
-                Password: "Adnan1234w",
+                Password: "Adnan1234",
                 ASINumber: "30232",
                 version: "NetV3"
             }

@@ -1346,7 +1346,7 @@ namespace VelocityTestCases
         public void Dist_VerifyPrivateProductInESPWebsites()
         {
             IWebDriver driver = DriverAccess.Shared();
-            int WaitTimeForVerification = 15;
+            int WaitTimeForVerification = 0;
             Wait.InMinute(WaitTimeForVerification);
             try
             {
@@ -1456,7 +1456,7 @@ namespace VelocityTestCases
         public void Dist_VerifySharedProductInESPWebsites()
         {
             IWebDriver driver = DriverAccess.Shared();
-            int WaitTimeForVerification = 15;
+            int WaitTimeForVerification = 0;
             try
             {
                 test = extent.StartTest("Dist_VerifySharedProductInESPWebsites");
@@ -1559,7 +1559,7 @@ namespace VelocityTestCases
             catch (Exception ex)
             {
 
-                throw new Exception("Copy Supplier Product Update AndA ctive It - Fail");
+                throw new Exception("Copy Supplier Product Update AndA ctive It - Fail "+ex.ToString());
             }
         }
         [Test, Order(50)]
