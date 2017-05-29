@@ -1573,7 +1573,7 @@ namespace VelocityTestCases
                 try
                 {
                     Wait.WaitUntilElementClickAble(By.LinkText("Manage Products"));
-                    SeleniumExtension.click(By.LinkText("Supplier Info"));
+                    SeleniumExtension._click(By.LinkText("Supplier Info"));
                     throw new Exception("Supplier Info Page was found");
                 }
                 catch (Exception ex)

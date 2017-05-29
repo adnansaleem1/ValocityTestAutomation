@@ -1,7 +1,7 @@
-Suppliers with Products in Review,,,,2/16/2017
+Suppliers with Products in Review,,,,5/29/2017
 MemberTypeCode, "asi #", "company name", "supplier level", "SSO", "prod_ID", "prod #", "prod name", "Reason For Review", "Comment", "Review Date"
-SPLR,"30270","Aakron Rule Corp",4,spullins3,7283527,67916,"16 oz. Folding Water Bottle","Legal Review","Vapur patent infringement",1/2/2017
-SPLR,"30270","Aakron Rule Corp",4,spullins3,7283528,80-67916,"16 oz. Folding Water Bottle, Full Color Digital","Legal Review","Vapur patent infringement",1/2/2017
+SPLR,"30270","Aakron Rule Corp",3,spullins3,7283527,67916,"16 oz. Folding Water Bottle","Legal Review","Vapur patent infringement",1/2/2017
+SPLR,"30270","Aakron Rule Corp",3,spullins3,7283528,80-67916,"16 oz. Folding Water Bottle, Full Color Digital","Legal Review","Vapur patent infringement",1/2/2017
 SPLR,"36965","Art Crystal LTD",9,lshaffer,550524096,7018set,"9 oz. Two-Tone Matte Mug - Red","Legal Review","Product Infringement",1/2/2017
 SPLR,"36965","Art Crystal LTD",9,lshaffer,550524109,7019set,"9 oz. Two-Tone Matte Mug - Orange","Legal Review","Product Infringement",1/2/2017
 SPLR,"36965","Art Crystal LTD",9,lshaffer,550524118,7014set,"9 oz. Two-Tone Matte Mug - Yellow","Legal Review","Product Infringement",1/2/2017
@@ -9,97 +9,171 @@ SPLR,"36965","Art Crystal LTD",9,lshaffer,550524122,7015set,"9 oz. Two-Tone Matt
 SPLR,"36965","Art Crystal LTD",9,lshaffer,550524128,7016set,"9 oz. Two-Tone Matte Mug - Rye Green","Legal Review","Product Infringement",1/2/2017
 SPLR,"36965","Art Crystal LTD",9,lshaffer,550524129,7013set,"Mug","Legal Review","Product Infringement",1/2/2017
 SPLR,"36965","Art Crystal LTD",9,lshaffer,550524133,7017set,"9 oz. Two-Tone Matte Mug - Sky Blue","Legal Review","Product Infringement",1/2/2017
-SPLR,"43077","C2 Dimensions Corp",9,csanjuanelo,5134225,B160-Roller,"Ballpoint Pen","Restricted words","Bankers",1/2/2017
-SPLR,"43077","C2 Dimensions Corp",9,csanjuanelo,5135837,R160,"Ballpoint Pen","Restricted words","Bankers",1/2/2017
-SPLR,"43077","C2 Dimensions Corp",9,csanjuanelo,5156357,B160-Ballpoint,"Ballpoint Pen","Restricted words","Bankers",1/2/2017
 SPLR,"46735","The Corporate Image Group",9,eswitzer,551230342,YT-CAN-ST,"Tumbler Colster","Legal Review","YETI",1/26/2017
 SPLR,"46735","The Corporate Image Group",9,eswitzer,551231393,YT-30,"30 oz. Tumbler","Legal Review","YETI",1/26/2017
 SPLR,"46735","The Corporate Image Group",9,eswitzer,551231398,,"10 oz. Tumbler Lowball","Legal Review","YETI",1/26/2017
-SPLR,"47700","Crown Products",2,rvolinsky,550643303,SILISTRP,"Silicone Phone Pocket with Finger Strap","Legal Review","patent infringement",11/22/2016
-SPLR,"47933","Custom Creations",5,kim@custom-creationsinc.com,551282121,PW-1001,"Phone Wallet","Restricted words","3M",2/15/2017
+SPLR,"47700","Crown Products",1,rvolinsky,550643303,SILISTRP,"Silicone Phone Pocket with Finger Strap","Legal Review","patent infringement",11/22/2016
 SPLR,"52840","Evans Manufacturing",0,rvolinsky,7268363,4280,"16 oz Voyager Collapsible Pouch","Legal Review","Vapur patent infringement",1/2/2017
-SPLR,"66887","Leed's",2,lshaffer,551164824,7120-16,"Thunderbolt Dual USB Car Charger","Legal Review","apple",11/4/2016
-SPLR,"74245","Nordic Co Inc",5,coliver,551269075,3568,"9 oz. Hilo Spoon Mug","Restricted words","Mug w/ Spoon",2/10/2017
-SPLR,"74245","Nordic Co Inc",5,coliver,551270214,32860,"16 oz. Two Tone Reading Spooner Mug","Restricted words","Mug w/ Spoon",2/10/2017
-SPLR,"74245","Nordic Co Inc",5,coliver,551270215,3286,"16 oz. Two Tone Spooner Mug","Legal Review","Mug w/ Spoon",2/10/2017
-SPLR,"80289","RMK Worldwide Inc",5,alange,6388030,31628,"9"" 911 Carrera 4s Die Cast Replica","Legal Review","",2/12/2016
+SPLR,"57800","Gordon Sinclair",3,fa20,551153044,BOX3SB37,"up koozie 17 oz Stainless Steel Serendipity Bottles Gift Set","Restricted words","koozie",5/17/2017
+SPLR,"66887","Leed's",0,lshaffer,551164824,7120-16,"Thunderbolt Dual USB Car Charger","Legal Review","apple",4/24/2017
+SPLR,"74245","Nordic Co Inc",6,[Login Id 342082 not located in user database],551269075,3568,"9 oz. Hilo Spoon Mug","Restricted words","Mug w/ Spoon",2/10/2017
+SPLR,"74245","Nordic Co Inc",6,[Login Id 342082 not located in user database],551270214,32860,"16 oz. Two Tone Reading Spooner Mug","Restricted words","Mug w/ Spoon",2/10/2017
+SPLR,"74245","Nordic Co Inc",6,[Login Id 342082 not located in user database],551270215,3286,"16 oz. Two Tone Spooner Mug","Legal Review","Mug w/ Spoon",2/10/2017
 SPLR,"61005","Hirsch Gift Inc",4,lshaffer,550539656,4658,"Preso 18oz Suction Mug","Legal Review","per legal",1/2/2017
-SPLR,"67483","LightNovelties.com",2,xxxcoliver,200202093,164-lg2012,"Custom NEON SIGN - Greek Lettering - 13"" x 32""","Legal Review","Greek Lettering",1/2/2017
+SPLR,"39250","Beacon Promotions Inc",3,krapp,550312847,GP246T,"Tractor Rain Gauge","Legal Review","John Deere ",4/25/2017
+SPLR,"67483","LightNovelties.com",3,coliver,200202093,164-lg2012,"Custom NEON SIGN - Greek Lettering - 13"" x 32""","Legal Review","Greek Lettering",1/2/2017
+SPLR,"30198","A M C Special Markets",9,sfarrell,550553091,42FZ25836,"Frozen ""Sisters"" Backpack","Legal Review","Disney Review",5/20/2017
+SPLR,"30198","A M C Special Markets",9,lshaffer,551130074,42FZ26811,"Frozen Rolling Luggage","Legal Review","Disney",3/31/2017
+SPLR,"30198","A M C Special Markets",9,lshaffer,551130076,42CZ26361,"Cars Lightning McQueen Backpack","Legal Review","Cars",3/31/2017
+SPLR,"30198","A M C Special Markets",9,lshaffer,551130077,42TN26504,"TMNT Mutants Rule Backpack","Legal Review","Ninja Turtles",3/31/2017
+SPLR,"30198","A M C Special Markets",9,lshaffer,551130078,42MW26491,"Minnie Mouse Backpack","Legal Review","Disney Infringement",3/31/2017
+SPLR,"30198","A M C Special Markets",9,lshaffer,551130080,42FZ26025,"Frozen ""Elsa"" Backpack","Legal Review","Disney",3/31/2017
+SPLR,"30198","A M C Special Markets",9,lshaffer,551130082,42TN26814,"TMNT Team Turtles Luggage","Legal Review","Ninja Turtles",3/31/2017
+SPLR,"30198","A M C Special Markets",9,lshaffer,551130083,42FZ26916,"Frozen ""Elsa"" Pilot Case","Legal Review","Disney",3/31/2017
+SPLR,"30198","A M C Special Markets",9,lshaffer,551130085,42CZ26981,"Cars Pilot Case","Legal Review","Cars",3/31/2017
 SPLR,"30232","ASIQA Supplier I",9,[not recorded],550935919,,"submit to review test","Restricted words","banker",1/1/2017
 SPLR,"30232","ASIQA Supplier I",9,profa,551268939,,"rust cohle submit restricted words","Restricted words","Magic Cube",2/1/2017
-SPLR,"57582","Global Promo LLC",7,jleifholtz,550228142,CH-200US,"Power Stik","Legal Review","Pulling into Legal Review based on old legal notes. JKL",1/3/2017
-SPLR,"57582","Global Promo LLC",7,jleifholtz,550297763,CH-405,"Bloom Charger","Legal Review","Pulling into Legal Review based on old legal notes. JKL",1/3/2017
-SPLR,"57582","Global Promo LLC",7,lshaffer,550991725,UFM-A4TF,"MP4 Players","Legal Review","apple look alike",1/29/2017
-SPLR,"30235","ASIQA Supplier II",9,faheem,551188590,,"bazinga test edit","Restricted words","iPhone",11/10/2016
+SPLR,"57582","Global Promo LLC",8,jleifholtz,550297763,CH-405,"Bloom Charger","Legal Review","Pulling into Legal Review based on old legal notes. JKL",1/3/2017
+SPLR,"57582","Global Promo LLC",8,lshaffer,550991725,UFM-A4TF,"MP4 Players","Legal Review","apple look alike",1/29/2017
+SPLR,"30235","ASIQA Supplier II",9,faheem,551188590,,"bazinga test edit","Restricted words","iPhone",5/12/2017
 SPLR,"68253","A A A & M K Promotion Inc.",5,rvolinsky,550849358,COFFEE-MUG-J95,"15 oz Brown mug / ceramic coffee mug / cup","Legal Review","mighty mugs",12/21/2016
-DIST,"231310","Infinart, Inc",,[not recorded],551046058,3411,"Women's Vansport (TM) Melange 1/4 Zip Tech Pullover","Restricted words","3M",8/27/2016
-DIST,"255500","Longbehn & Co Inc",,mrush255500,551281253,7140-51,"Stretch Bluetooth Selfie Stick","Restricted words","iPad",2/13/2017
-DIST,"185126","Tejas Office Products Inc",,Ellen.elam@tejasoffice.com,200374433,BCMCC,"Blue Koozie","Restricted words","koozie",12/29/2016
+SPLR,"87625","SkinIt",9,[Login Id 357320 not located in user database],550059387,,"InkFusion Pro Iphone5 case","Restricted words","iPad",5/17/2017
+DIST,"185126","e2 Specialty Distributors",,eelam@officeeffects.com,200374433,BCMCC,"Blue Koozie","Restricted words","koozie",12/29/2016
+DIST,"230169","Images Alive LTD",,[Login Id 344648 not located in user database],551298363,20MPF-6002-44,"Scripto(R) Clenmore Ballpoint Stylus","Restricted words","iPhone,iPad",2/26/2017
 DIST,"101588","A To Z Promotions Inc",,101588,551260842,0204,"Black Frisbee","Restricted words","frisbee",1/25/2017
-DIST,"151066","Burrell Promotions",,burrell,200346417,319,"Javalina(R) Platinum","Restricted words","Javalina",2/15/2017
 DIST,"101574","ASIQA Distributor I",,or4101574,551256452,P4023,"Varsity Duffel Bag","Restricted words","Gemline",1/21/2017
+DIST,"490152","Proforma Business Impact",,vickie.riggins@proforma.com,551283504,7950-94,"Field & Co. Hudson 15"" Computer Backpack","Restricted words","iPad",2/20/2017
+SPLR,"91082","That's My Ball",6,gthomas,550764380,DI-TMB-12096-6,"DI-14oz Football Shape Water Bottle","Legal Review","Jetline Patent Infringement",3/31/2017
+SPLR,"50287","DollarDays Inc",5,krapp,551050731,1948867,"John Deere Dog Bone Tin","Legal Review","John Deere",4/25/2017
+SPLR,"50287","DollarDays Inc",5,krapp,551211660,2128283,"John Deere Bandanas","Legal Review","John Deere",4/25/2017
+SPLR,"57611","Gold Mountain Group Inc",8,mziereis,6050557,GM-WA-001U,"16 oz Collapsible and Foldable Water Pouch With Carabiner","Legal Review","Patent Infringement per email from Kristi 3-23-16",3/23/2016
+SPLR,"44369","CE Marketing, Inc",9,gthomas,550075710,BkPkSoc15-17,"Drawstring Soccer Backpack (15x17)","Legal Review","Jetline Patent Infringement",3/31/2017
 DIST,"211824","Go Promo, LLC",,tom@justgopromo.com,200363623,F7332,"Stryker - Hooded Sweatshirt","Restricted words","3M",1/21/2017
-SPLR,"80234","QPS Promo LLC",8,eswitzer,5838653,QS072,"Anti-Slip Pad","Legal Review","HandsStands patent infringement",11/22/2016
-SPLR,"90453","T & B Promos, LLC",8,rvolinsky,550223775,TB3011534,"Bag  hanger","Legal Review","infringement Luxe Link",1/2/2017
+SPLR,"80234","QPS Promo LLC",8,eswitzer,5838653,QS072,"Anti-Slip Pad","Legal Review","HandsStands patent infringement",4/21/2017
 SPLR,"73791","New Info Promos Ltd",8,eswitzer,550532131,NIPSH037,"Silicone phone back strap","Legal Review","HandStands patent infringement",11/22/2016
 SPLR,"95739","Wayne Lee Promotion Inc.",8,rvolinsky,550209852,WL621,"Car Vent Air Freshener","Legal Review","patent infringement",1/2/2017
 SPLR,"52841","Evans Manufacturing Canada",2,gthomas,7392077,4280,"16 oz Voyager Collapsible Pouch","Legal Review","HandStand patent infringement",1/31/2017
+SPLR,"93751","Victory Tailgate",8,[Login Id 342082 not located in user database],551214255,,"Giant Custom Tumble Tower Game","Legal Review","Tumble Tower",3/6/2017
+SPLR,"55217","4ideagoods.com",8,4ideashawn,200326401,GC02,"Slate Coasters and Non-ice Cubes Gift Set","Restricted words","Whisky Stones",4/5/2017
+SPLR,"34053","All Day Promo",8,gthomas,550988325,ADP-719,"Soccer ball Shape Collapsible Sports bottle bag","Legal Review","Jetline Patent Infringement",4/3/2017
 SPLR,"57632","Golden Promo Inc",8,sgreathouse,551222697,CGIP101411,"Camera Len Mug Spill Free Mug","Legal Review","Mighty Mug",12/21/2016
 SPLR,"86587","SG Sourcing INC",8,eswitzer,550527874,MY10070,"Car air fresheners","Legal Review","HandsStands patent infringement",1/2/2017
 SPLR,"86587","SG Sourcing INC",8,sgreathouse,550758351,ZJ098,"540ML Suction Mug","Legal Review","Mighty Mug",1/2/2017
-SPLR,"86587","SG Sourcing INC",8,tamreckard,551105684,SH528,"Wallet Pocket Credit Card Multi-Tools","Legal Review","Per Kristi K",11/22/2016
-SPLR,"34856","Alton Promos",8,mziereis,551172720,AL-CQ098,"PopSocket Phone Stand","Legal Review","PopSockets infringement",1/25/2017
-SPLR,"34856","Alton Promos",8,mziereis,551202288,AL-IN0128,"Popsockets","Legal Review","PopSockets Infringement",1/25/2017
-SPLR,"34856","Alton Promos",8,mziereis,551203777,AL-IN342120,"Popsockets -Popclip Combo","Legal Review","PopSockets infringement",1/25/2017
-SPLR,"34856","Alton Promos",8,mziereis,551203790,AL-IN0912,"Popsocket /Popclip Combo","Legal Review","PopSockets infringement",1/25/2017
-SPLR,"34856","Alton Promos",8,mziereis,551203806,AL-IN30000,"PopSocket","Legal Review","Popsockets infringement",1/25/2017
+SPLR,"86587","SG Sourcing INC",8,tamreckard,551105684,SH528,"Wallet Pocket Credit Card Multi-Tools","Legal Review","Per Kristi K",3/22/2017
+SPLR,"34856","Alton Promos",8,mziereis,551172720,AL-CQ098,"PopSocket Phone Stand","Legal Review","PopSockets infringement",4/29/2017
+SPLR,"34856","Alton Promos",8,mziereis,551202288,AL-IN0128,"Popsockets","Legal Review","PopSockets Infringement",5/25/2017
+SPLR,"34856","Alton Promos",8,mziereis,551203777,AL-IN342120,"Popsockets -Popclip Combo","Legal Review","PopSockets infringement",5/27/2017
+SPLR,"34856","Alton Promos",8,mziereis,551203790,AL-IN0912,"Popsocket /Popclip Combo","Legal Review","PopSockets infringement",5/27/2017
+SPLR,"34856","Alton Promos",8,mziereis,551203806,AL-IN30000,"PopSocket","Legal Review","Popsockets infringement",5/27/2017
 SPLR,"34856","Alton Promos",8,mziereis,551249333,AL-LX518,"PopSocket Phone Stand","Legal Review","PopSockets infringement",1/25/2017
 SPLR,"34856","Alton Promos",8,mziereis,551249360,AL-LX51886,"Popsocket /Popclip Combo /Phone Stand","Legal Review","PopSockets infringement",1/25/2017
-SPLR,"31962","ADLIGHTS.com",9,xxxcoliver,7413125,164-lg2012,"Custom NEON SIGN - Greek Lettering - 13"" x 32""","Legal Review","Greek Lettering",1/2/2017
-SPLR,"31962","ADLIGHTS.com",9,xxxcoliver,7413126,164-lg2012-1,"Custom LED SIGN - Greek Lettering - 20"" x 37""","Legal Review","Greek Lettering",1/2/2017
-SPLR,"31957","ADGLOW",8,xxxcoliver,7402615,164-lg2012,"Custom NEON SIGN - Greek Lettering - 13"" x 32""","Legal Review","Greek Lettering",1/2/2017
+SPLR,"31962","ADLIGHTS.com",8,coliver,7413125,164-lg2012,"Custom NEON SIGN - Greek Lettering - 13"" x 32""","Legal Review","Greek Lettering",1/2/2017
+SPLR,"31962","ADLIGHTS.com",8,coliver,7413126,164-lg2012-1,"Custom LED SIGN - Greek Lettering - 20"" x 37""","Legal Review","Greek Lettering",1/2/2017
+SPLR,"31957","ADGLOW",8,coliver,7402615,164-lg2012,"Custom NEON SIGN - Greek Lettering - 13"" x 32""","Legal Review","Greek Lettering",1/2/2017
 SPLR,"87679","Smart Sourcing LLC",8,eswitzer,550635382,SSL100847,"Car Phone Non-slip Mat","Legal Review","HandsStands patent infringement",11/22/2016
-SPLR,"66225","LancyPromos LLC",8,mziereis,551153032,PSPH,"Popsockets","Legal Review","PopSockets",1/25/2017
-SPLR,"66225","LancyPromos LLC",8,mziereis,551153112,PSPH2,"Popsockets","Legal Review","PopSockets",1/25/2017
-SPLR,"66225","LancyPromos LLC",8,mziereis,551153155,PSPH4,"Popsockets Popclip Combo","Legal Review","PopSockets infringement",1/25/2017
-SPLR,"66225","LancyPromos LLC",8,mziereis,551158836,PSPH4,"Popsockets -Popclip Combo","Legal Review","PopSockets infringement",1/25/2017
-SPLR,"66225","LancyPromos LLC",8,mziereis,551158881,PSPH,"Popsockets Phone Holders","Legal Review","PopSockets",1/25/2017
-SPLR,"62148","Ideasource Inc.",8,mziereis,551181626,ISEY-611014,"Mighty Mug","Legal Review","Mighty Mug",12/21/2016
-SPLR,"30030","A.D.A.I. Promotions Inc.",8,tamreckard,550618453,AP0168,"Wayfarer Sunglasses","Legal Review","Wayfarer",11/11/2016
-SPLR,"67821","Logo Palaces",8,rvolinsky,550397825,ALHKL036,"20oz shaker bottle","Legal Review","blender bottle",7/19/2016
-SPLR,"67821","Logo Palaces",8,rvolinsky,550436903,ALPNP060,"Plastic Shaker Bottle With Wire Whisk","Legal Review","blender bottle",7/19/2016
-SPLR,"67821","Logo Palaces",8,rvolinsky,550961687,BONNIE091,"Shaker Bottle","Legal Review","blender bottle",1/11/2017
-SPLR,"87639","Skyrock Promo",8,mziereis,551166246,SKZC183,"PopSocket Phone Stand","Legal Review","Popsockets infringement",1/25/2017
-SPLR,"87639","Skyrock Promo",8,mziereis,551166303,SKZC184,"PopSocket","Legal Review","PopSockets infringement",1/25/2017
-SPLR,"87639","Skyrock Promo",8,mziereis,551168863,SKZC185,"Popsocket / Popclip Combo","Legal Review","PopSockets infringement",1/25/2017
-SPLR,"87639","Skyrock Promo",8,mziereis,551168888,SKZC186,"Pop Phone Stand","Legal Review","PopSockets infringement",1/25/2017
-SPLR,"87639","Skyrock Promo",8,mziereis,551168951,SKZC187,"Popsocket with Paper Card Packing","Legal Review","Popsockets infringement",1/25/2017
-SPLR,"87639","Skyrock Promo",8,mziereis,551168984,SKZC188,"Popsocket /Popclip Combo","Legal Review","PopSockets infringement",1/25/2017
-SPLR,"87639","Skyrock Promo",8,mziereis,551177953,SKDS173,"PopSocket Phone Stand","Legal Review","PopSockets infringement",1/25/2017
-SPLR,"87639","Skyrock Promo",8,mziereis,551202262,SKI092313,"PopSocket phone holder","Legal Review","PopSockets infringement",1/25/2017
+SPLR,"45245","CJ Branding LLC",8,[not recorded],550035317,CJ10311,"Retractable Cable Connector","Legal Review","",9/5/2016
+SPLR,"90168","Sunrise Gifts Inc",8,cstevenson,550134912,AAMX1402022,"Lemon cup","Legal Review","10/16/15-set to legal review per Kristi K.",2/12/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550394126,AAMSL1504020,"22oz Color Lemon Bottle","Legal Review","set to legal review, per Kristi K.",4/12/2016
+SPLR,"90168","Sunrise Gifts Inc",8,gthomas,550403042,AAYHT1504042,"USB Charger Wristbands/Bracelets for Iphone 6","Legal Review","Apple Infringement",4/21/2016
+SPLR,"90168","Sunrise Gifts Inc",8,gthomas,550406810,AAMSL1504025,"3 in 1 Knife USB Data Cable","Legal Review","Apple Infringement",4/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,gthomas,550406816,AAMSL1504027,"3 in 1 Ball USB Data Cable","Legal Review","Apple Infringement",4/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,gthomas,550406818,AAMSL1504028,"3 in 1 Tennis Ball USB Data Cable","Legal Review","Apple Infringement",4/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,gthomas,550406820,AAMSL1504029,"3 in 1 Case USB Data Cable","Legal Review","Apple Infringement",4/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,gthomas,550406823,AAMSL1504030,"3 in 1 Box USB Data Cable","Legal Review","Apple Infringement",4/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,gthomas,550406826,AAMSL1504031,"3 in 1 Polo Shirt USB Data Cable","Legal Review","Apple Infringement",4/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550511151,AAYHT1507027,"23 oz Colorful Frosting Lemon Cup ","Legal Review","set to legal review, per Kristi K.",7/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,cstevenson,550511152,AAYHT1507028,"23 oz Colorful Frosting Lemon Cup ","Legal Review","10/16/15-set to legal review per Kristi K.",7/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550511156,AAYHT1507029,"23 oz Colorful Lemon Cup ","Legal Review","set to legal review, per Kristi K.",7/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550511157,AAYHT1507030,"23 oz Colorful Lemon Cup ","Legal Review","set to legal review, per Kristi K.",7/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550511160,AAYHT1507033,"17 oz Colorful Frosting Lemon Cup ","Legal Review","set to legal review, per Kristi K.",7/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550511161,AAYHT1507034,"17 oz Colorful Frosting Lemon Cup ","Legal Review","set to legal review, per Kristi K.",7/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550511163,AAYHT1507035,"17 oz Colorful Lemon Cup ","Legal Review","set to legal review, per Kristi K.",7/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550511165,AAYHT1507036,"17 oz Colorful Lemon Cup ","Legal Review","set to legal review, per Kristi K.",7/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550511166,AAYHT1507037,"22 oz Colorful Lemon Cup ","Legal Review","set to legal review, per Kristi K.",7/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550511167,AAYHT1507038,"22 oz Colorful Lemon Cup ","Legal Review","set to legal review, per Kristi K.",7/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550511168,AAYHT1507039,"24 oz Colorful Lemon Cup ","Legal Review","set to legal review, per Kristi K.",7/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550511170,AAYHT1507040,"24 oz Colorful Lemon Cup ","Legal Review","set to legal review, per Kristi K.",7/23/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550511932,AAYHT1507041,"22 oz Colorful Lemon Cup ","Legal Review","set to legal review, per Kristi K.",7/24/2016
+SPLR,"90168","Sunrise Gifts Inc",8,alange,550511935,AAYHT1507042,"22 oz Colorful Lemon Cup ","Legal Review","set to legal review, per Kristi K.",7/24/2016
+SPLR,"90168","Sunrise Gifts Inc",8,tonywang,550862870,AAQKD1604066,"Silicone Dog Frisbee","Restricted words","frisbee",5/12/2017
+SPLR,"51524","eBetter LLC",8,tamreckard,550239868,EBEZY0048,"Multi-function Survival Tool","Legal Review","Per Kristi K",11/22/2016
+SPLR,"56731","Getin Promos Inc",9,eswitzer,551278576,SB00060,"Cell Socket Stand Grip","Legal Review","PopSockets-patent and trademark-per Kristi",3/2/2017
+SPLR,"34367","Alogoholic, LLC",8,eswitzer,551199584,ALHLL207,"Customize PopSockets","Legal Review","PopSockets Patent and Trademark Infringement per Kristi",5/23/2017
+SPLR,"34367","Alogoholic, LLC",8,eswitzer,551212966,ALHTL084,"Popsocket Phone Stand/Popclip Combo","Legal Review","PopSockets Patent and Trademark Infringement per Kristi",3/20/2017
+SPLR,"34367","Alogoholic, LLC",8,eswitzer,551232118,ALHJW012,"Pop Sockets Phone Stand & Holder","Legal Review","PopSockets Patent and Trademark Infringement per Kristi",3/20/2017
+SPLR,"34367","Alogoholic, LLC",8,eswitzer,551250391,ALHBZ14,"Pop Socket","Legal Review","PopSockets Patent and Trademark Infringement per Kristi",3/20/2017
+SPLR,"34367","Alogoholic, LLC",8,eswitzer,551310284,ALHBZ19,"Collapsible Phone Holder for Vehicle","Legal Review","PopSockets Patent and Trademark Infringement per Kristi",3/20/2017
+SPLR,"34367","Alogoholic, LLC",8,eswitzer,551331814,WENDY001,"PHONE SOCKET","Legal Review","Patent and trademark infringement for PopSockets per Kristi.",3/23/2017
+SPLR,"62148","Ideasource Inc.",8,mziereis,551181626,ISEY-611014,"Mighty Mug","Legal Review","Mighty Mug",5/5/2017
+SPLR,"62148","Ideasource Inc.",8,eswitzer,551330064,ISMY-73161,"PopSockets with rush service","Legal Review","PopSockets Patent and Trademark Infringement per Kristi",3/20/2017
+SPLR,"62148","Ideasource Inc.",8,eswitzer,551332678,ISEY-703131,"Phone Expanding Stand","Legal Review","Patent and trademark infringement for PopSockets per Kristi.",3/23/2017
+SPLR,"64905","Kinline Promos Inc",8,gthomas,550698430,KL871,"Water Bottle","Legal Review","Jetline Patent Infringement",3/31/2017
+SPLR,"30030","A.D.A.I. Promotions Inc.",2,tamreckard,550618453,AP0168,"Wayfarer Sunglasses","Legal Review","Wayfarer",11/11/2016
+SPLR,"67821","Logo Palaces",8,eswitzer,551148450,ALLEN131,"PopSocket Phone Stand","Legal Review","PopSockets Patent and Trademark Infringement per Kristi",4/14/2017
+SPLR,"67821","Logo Palaces",8,eswitzer,551232243,Bonnie236,"Popsocket with hook","Legal Review","PopSockets Patent and Trademark Infringement per Kristi",3/20/2017
+SPLR,"67821","Logo Palaces",8,eswitzer,551232252,Bonnie238,"Popsocket","Legal Review","PopSockets Patent and Trademark Infringement per Kristi",3/20/2017
+SPLR,"67821","Logo Palaces",8,eswitzer,551318068,ALPGX008,"Pop Socket Phone Expanding Stand","Legal Review","PopSockets Patent and Trademark Infringement per Kristi",3/20/2017
+SPLR,"74709","Ocean Blessing",9,sfarrell,550536943,OBS285A,"3 in 1 ,micro usb/iphone4/iphone5","Legal Review","Apple Infringement",8/20/2016
+SPLR,"74709","Ocean Blessing",9,sfarrell,550536947,OBS280A,"Fabric Braided USB/M to Iphone4 cable","Legal Review","Apple Infringement",8/20/2016
+SPLR,"74709","Ocean Blessing",9,sfarrell,550536950,OBS283A,"Light Up 5 USB Cable","Legal Review","Apple Infringement",8/20/2016
+SPLR,"74709","Ocean Blessing",9,sfarrell,550536959,OBS281A,"Fabric Braided USB/M to Iphone5 cable","Legal Review","Apple Infringement",8/20/2016
+SPLR,"74709","Ocean Blessing",9,sfarrell,550536961,OBS277A,"LED Light Iphone5 Smile USB Cable","Legal Review","Apple Infringement",8/20/2016
+SPLR,"74709","Ocean Blessing",9,sfarrell,550536965,OBS273A,"Iphone5 data cable","Legal Review","Apple Infringement",8/20/2016
+SPLR,"74709","Ocean Blessing",9,sfarrell,550536967,OBS272A,"Iphone4 data cable","Legal Review","Apple Infringement",8/20/2016
+SPLR,"74709","Ocean Blessing",9,sfarrell,550536974,OBS270A,"3 in 1 USB Cable","Legal Review","Apple Infringement",8/20/2016
+SPLR,"74709","Ocean Blessing",9,sfarrell,550536977,OBS269A,"6 in 1 USB Cable","Legal Review","Apple Infringement",8/20/2016
+SPLR,"74709","Ocean Blessing",9,sfarrell,550536980,OBS268A,"3 in 1 Lighting USB Cable","Legal Review","Apple Infringement",8/20/2016
+SPLR,"74709","Ocean Blessing",9,sfarrell,550536982,OBS267A,"3 in 1 USB Cable","Legal Review","Apple Infringement",8/20/2016
+SPLR,"74709","Ocean Blessing",9,sfarrell,550536988,OBS294A,"Keychain Iphone5 USB Charge Cable","Legal Review","Apple Infringement",8/20/2016
+SPLR,"74709","Ocean Blessing",9,sfarrell,550544249,OBS270S,"3 in 1 USB Cable","Legal Review","Apple Infringement",8/28/2016
+SPLR,"87639","Skyrock Promo",8,mziereis,551166246,SKZC183,"PopSocket Phone Stand","Legal Review","Popsockets infringement",4/26/2017
+SPLR,"87639","Skyrock Promo",8,mziereis,551166303,SKZC184,"PopSocket","Legal Review","PopSockets infringement",4/26/2017
+SPLR,"87639","Skyrock Promo",8,mziereis,551168888,SKZC186,"Pop Phone Stand","Legal Review","PopSockets infringement",4/27/2017
+SPLR,"87639","Skyrock Promo",8,mziereis,551168951,SKZC187,"Popsocket with Paper Card Packing","Legal Review","Popsockets infringement",4/27/2017
+SPLR,"87639","Skyrock Promo",8,mziereis,551168984,SKZC188,"Popsocket /Popclip Combo","Legal Review","PopSockets infringement",4/27/2017
+SPLR,"87639","Skyrock Promo",8,mziereis,551177953,SKDS173,"PopSocket Phone Stand","Legal Review","PopSockets infringement",5/3/2017
+SPLR,"87639","Skyrock Promo",8,mziereis,551202262,SKI092313,"PopSocket phone holder","Legal Review","PopSockets infringement",5/25/2017
 SPLR,"87639","Skyrock Promo",8,mziereis,551244911,SKI010102,"Popsocket phone holder","Legal Review","PopSockets infringement",1/25/2017
 SPLR,"87639","Skyrock Promo",8,mziereis,551244931,SKI080103,"POPSOCKET PHONE STAND","Legal Review","PopSockets infringement",1/25/2017
 SPLR,"87639","Skyrock Promo",8,mziereis,551245145,SKI101019,"Popsocket with Popclip","Legal Review","PopSockets infringement",1/25/2017
-SPLR,"52562","Indigo Sparks Inc.",6,rvolinsky,551152064,HH028,"Silicone Cell Phone Strap","Legal Review","patent infringement",11/22/2016
-SPLR,"97215","WINHO Gifts Inc",8,eswitzer,550918539,WH 1000,"Cell Phone Back Strap","Legal Review","HandStands Patent Infringement",12/19/2016
+SPLR,"44150","Carved LLC",9,warren@carved.com,550621671,,"UV Printed Wood Phone Case","Restricted words","iPhone",4/21/2017
+SPLR,"52562","Indigo Sparks Inc.",8,rvolinsky,551152064,HH028,"Silicone Cell Phone Strap","Legal Review","patent infringement",4/15/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,550881594,ACE 80008,"Swell quality food grade stainless steel supreme bottles","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,550888551,ACE 80010,"Swell vaccum bottles stainless steel cola bottles","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,550888556,ACE 80011,"Swell quality frosted stainless steel bottles","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,550888642,ACE 80012,"Swell quality skull  bottles Kobe cola bottles","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,550888651,ACE 80014 AS,"Swell crocodile pattern surface stainless steel cola bottles","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,550888677,ACE 80015,"Swell Food grade stainless steel cola bottles coke bottles","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,550920434,ACE 80013,"Swell quality fruit flora patterns of stainless steel bottle","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,550940373,ACE 80054,"Swell quality wood pattern stainless steel bottles cola mugs","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,550940391,ACE 80053,"Swell quality vaccum bottles stainless steel cola bottles","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551174165,ACE 80089,"Swell quality bottles stainless steel cola bottles mugs","Legal Review","S’well infringement matter",4/30/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551174240,ACE 80092,"Swell Wood patterns bottles stainless steel cola bottles","Legal Review","S’well infringement matter",4/30/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551174274,ACE 80093,"Swell alligator pattern bottles stainless steel cola bottles","Legal Review","S’well infringement matter",4/30/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551174305,ACE 80094,"Swell quality bottles mugs stainless steel cola bottles","Legal Review","S’well infringement matter",4/30/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551176922,ACE 80096,"Swell wood patterns bottles stainless steel vacuum bottles","Legal Review","S’well infringement matter",5/2/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551176956,ACE 80097,"Swell wood collection stainless steel bottles vacuum bottles","Legal Review","S’well infringement matter",5/2/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551177082,ACE 80099,"Swell wood patterns bottles stainless steel vacuum bottles","Legal Review","S’well infringement matter",5/2/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551177140,ACE 80016,"Swell wood collection bottles stainless steel sports bottles","Legal Review","S’well infringement matter",5/2/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551178428,ACE 80017,"Swell qualilty sparkling champagne' Stainless Steel Bottles","Legal Review","S’well infringement matter",5/3/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551233977,ACE 80100,"Swell bottles Swell mugs","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551233994,ACE 80101,"Swell quality bottles Swell quality mugs water bottles","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551233999,ACE 80102,"Swell quality bottles Swell quality mugs water bottles","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551234046,ACE 80104,"New design vaccum bottles swell quality bottles","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551235516,ACE 80107,"Swell quality bottles Swell quality mugs","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551240700,ACE 80049,"Sip by Swell quality bottles Swell quality mugs","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551245558,ACE 80120,"Camouflage Pattern Swell quality bottles Swell quality mugs","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551245578,ACE 80121,"New Pattern Camo Swell Quality Bottles Swell Camo Mugs","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551246656,ACE 80122,"Sip by Swell bottles Swell quality mugs","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551246687,ACE 80123,"New Pattern Starbucks Stainless  Steel Bottles","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551246701,ACE 80124,"Bamboo Tumblers Travel Bottles / Water Bamboo Mugs","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"30469","Ace Pad Corp",2,mziereis,551359202,ACE 85177,"17 OZ Double Wall Insulated Stainless Steel V Bottle","Legal Review","S’well infringement matter",4/28/2017
+SPLR,"42679","Burjmark,LLC",2,eswitzer,551285078,BMCYJ166,"Popclip flexible mobile phone support","Legal Review","PopSockets Patent and Trademark Infringement per Kristi",3/20/2017
+SPLR,"37149","Astrostar Inc.",2,eswitzer,550811726,PMA104,"NEOPRENE TECH ACCESSORY CASE BEST","Legal Review","Jetline image infringement per Kristi Kantorski",4/10/2017
 SPLR,"37149","Astrostar Inc.",2,tamreckard,550924155,PMA291,"Wallet 18-in-1 Pocket Multi-Tools","Legal Review","Per Kristi K",12/25/2016
 SPLR,"37149","Astrostar Inc.",2,mziereis,551220091,PMA371,"PopSocket Phone Accessory","Legal Review","PopSockets infringement",1/25/2017
-SPLR,"58799","High Desert Sourcing",2,sgreathouse,551190830,HDSBW178,"SLR Camera Lens Cup with Suction","Legal Review","Mighty Mug",12/21/2016
-SPLR,"87634","Skylight Promo Inc.",9,rvolinsky,551204936,CSLP100335,"Push to Fail Cup","Legal Review","Mighty Mug",12/21/2016
-SPLR,"86394","SENDA Promotion Inc",9,rvolinsky,550939868,SDV 5222,"Cell Phone Non Slip Pad","Legal Review","patent infringement",1/6/2017
-SPLR,"86394","SENDA Promotion Inc",9,rvolinsky,550948105,SDE 014,"Cell Phone Back Strap","Legal Review","patent infringement",1/9/2017
-SPLR,"54888","Focus Gifts Printing Inc",8,tamreckard,551152609,FGV 029,"Credit Card Size Paper Thin Magnifier","Legal Review","Image infringement 12/5/16",12/5/2016
-SPLR,"99554","Zturn Promos Inc",8,mziereis,551169644,ZTJS127,"30 Oz. Tumbler","Legal Review","Rambler Inactive and Legal Review per Karen R",2/8/2017
-SPLR,"65925","KY Fast Idea Inc",9,mziereis,551169199,KY10032,"Popsocket","Legal Review","PopSocket infringement",1/26/2017
-SPLR,"49546","Diamondback Engraving LLC",7,knellist,551188720,YETIR-30,"ENGRAVED 30 OZ TUMBLER","Legal Review","Yeti",11/11/2016
-SPLR,"49546","Diamondback Engraving LLC",7,knellist,551188724,YETIB18,"ENGRAVED 18 OZ BOTTLE INSULATED TUMBLER","Legal Review","YETI",11/11/2016
-SPLR,"49546","Diamondback Engraving LLC",7,knellist,551188725,YETIB36,"ENGRAVED 36 OZ BOTTLE INSULATED TUMBLER","Legal Review","YETI",11/11/2016
-SPLR,"49546","Diamondback Engraving LLC",7,knellist,551188726,YETIB64,"ENGRAVED 64 OZ BOTTLE INSULATED TUMBLER","Legal Review","Yeti",11/11/2016
-SPLR,"62503","Inbound Promotional Solutions Inc.",2,lshaffer,551214859,ppds0390,"Mug with Spoon","Legal Review","Mug W/Spoon",1/30/2017
-SPLR,"62503","Inbound Promotional Solutions Inc.",2,lshaffer,551214860,ppds0391,"Mug with Spoon","Legal Review","Mug W/Spoon",1/30/2017
-SPLR,"62503","Inbound Promotional Solutions Inc.",2,lshaffer,551214861,ppds0392,"Mug with Spoon","Legal Review","Mug W/Spoon",1/30/2017
-SPLR,"62503","Inbound Promotional Solutions Inc.",2,lshaffer,551214862,ppds0393,"Mug with Spoon","Legal Review","Mug W/Spoon",1/30/2017
-SPLR,"62504","Inbound Promotional Solutions Inc. (Canada)",4,lshaffer,551217764,ppds0390,"Mug with Spoon","Legal Review","Mug W/Spoon",1/30/2017
-SPLR,"62504","Inbound Promotional Solutions Inc. (Canada)",4,lshaffer,551217765,ppds0391,"Mug with Spoon","Restricted words","Mug W/Spoon",1/30/2017
-SPLR,"62504","Inbound Promotional Solutions Inc. (Canada)",4,lshaffer,551217766,ppds0392,"Mug with Spoon","Legal Review","Mug W/Spoon",1/30/2017
-SPLR,"62504","Inbound Promotional Solutions Inc. (Canada)",4,lshaffer,551217767,ppds0393,"Mug with Spoon","Legal Review","Mug W/Spoon",1/30/2017
+SPLR,"79659","Pro Branding Solutions",2,coliver,550982405,PBS110780,"Airbag Phone Stand","Legal Review","PopSockets patent",1/24/2017
+SPLR,"79913","Promotion Arrow",2,eswitzer,551325321,JL005,"Mobile Phone Stand","Legal Review","PopSockets Patent and Trademark Infringement per Kristi",3/20/2017
+SPLR,"79971","Prosperous Inc.",,[not recorded],550832797,PRSK1054,"36"" Casino Bungee Cord W/ Lobster Claw And J-HOOK","Legal Review","distributor contacted regarding a patent & copyright infringement from SHC Holdings, LLC Specialty H",4/23/2017
+SPLR,"58799","High Desert Sourcing",,sgreathouse,551190830,HDSBW178,"SLR Camera Lens Cup with Suction","Legal Review","Mighty Mug",5/16/2017
+SPLR,"87634","Skylight Promo Inc.",,rvolinsky,551204936,CSLP100335,"Push to Fail Cup","Legal Review","Mighty Mug",12/21/2016

@@ -112,7 +112,7 @@ namespace VelocityTestCases.Utility
                 request.AddHeader("AuthToken", user.AuthToken);
                 IRestResponse response = client.Execute(request);
 
-                if (response.Content == "" && response.StatusCode != HttpStatusCode.OK)
+                if (response.Content != "" || response.StatusCode != HttpStatusCode.OK)
                 {
                     throw new Exception("Unable to InActive product - Fail");
                 }
