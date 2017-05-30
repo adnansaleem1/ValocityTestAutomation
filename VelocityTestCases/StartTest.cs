@@ -316,7 +316,7 @@ namespace VelocityTestCases
             {
                 Logger.Log("Update Active product information - Fail", ex);
 
-                throw;
+              //  throw;
             }
 
         }
