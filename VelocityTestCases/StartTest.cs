@@ -384,6 +384,7 @@ namespace VelocityTestCases
                 UserUtility.LoginToVelocity(Credentials.VelocityEIT_User);
                 State.GotoSupplierHomeByID(Credentials.Supplier_AsiNumber);
                 State.TabSwitchByName(ExtrenalUserTabItems.Manage_Product);
+                ProductSearchUtility.ClearAllFilters();
                 ProductSearchUtility.SearchProductByName("\"" + Info.Search_Product_Name_BulkOperation + "\"");
                 //ProductSearchUtility.ActionOnSearchTile(ProductSearchUtility.findResultFromSearchResult(false), "Delete");
                 //Number of products that you want to select

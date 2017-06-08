@@ -100,9 +100,9 @@ namespace VelocityTestCases.Utility
               keywords+=a+",";
               }
               SeleniumExtension.AddTextToField(By.Id("token-input-productKeywords-EIT"), keywords);
-              Wait.InSeconds(1);
+              Wait.InSeconds(2);
               SeleniumExtension.click(By.XPath("//*[@id=\"bulkEditKeywordsModal-EIT\"]/div[2]/button"));
-              Wait.InSeconds(1);
+              Wait.InSeconds(2);
               SeleniumExtension.click(By.CssSelector("button[data-target='#sayModalSuccessDialog']"));
           }
     }
