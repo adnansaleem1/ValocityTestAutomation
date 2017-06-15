@@ -27,6 +27,8 @@ namespace VelocityTestCases.Utility
                 //var driver = new ChromeDriver(@"D:\chromedriver_win32\", chromeOptions);
 
                 Mydriver = new ChromeDriver(chromeOptions);
+                Mydriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromMinutes(2));
+                Mydriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromMinutes(2));
             }
             return Mydriver;
         }

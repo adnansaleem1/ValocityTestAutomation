@@ -1347,7 +1347,7 @@ namespace VelocityTestCases
         public void Dist_VerifyPrivateProductInESPWebsites()
         {
             IWebDriver driver = DriverAccess.Shared();
-            int WaitTimeForVerification = 0;
+            int WaitTimeForVerification = 15;
             Wait.InMinute(WaitTimeForVerification);
             try
             {
@@ -1457,7 +1457,7 @@ namespace VelocityTestCases
         public void Dist_VerifySharedProductInESPWebsites()
         {
             IWebDriver driver = DriverAccess.Shared();
-            int WaitTimeForVerification = 0;
+            int WaitTimeForVerification = 15;
             try
             {
                 test = extent.StartTest("Dist_VerifySharedProductInESPWebsites");
@@ -1534,7 +1534,7 @@ namespace VelocityTestCases
                     Wait.WaitUntilElementDisply(By.ClassName("product-details-container"));
                     ImagesCount = driver.FindElement(By.ClassName("imageStrip")).FindElements(By.TagName("li")).Count;
                     PriceGridCount = driver.FindElements(By.ClassName("priceGridTop")).Count;
-                    driver.FindElement(By.LinkText("Create Custom Product")).Click();
+                    SeleniumExtension.TryToClick(By.LinkText("Create Custom Product"));
                     Wait.WaitUntilElementDisply(By.Id("summaryProductDescription"));
                     State.TabSwitchByName(NewProductTabItems.Images);
                     CopyImagesCount = driver.FindElements(By.ClassName("image-list-item")).Count;
